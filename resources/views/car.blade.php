@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
     <!--    <link rel="stylesheet" href="style/style.sass">-->
     {{--    <script type="module" crossorigin src="{{public_path('/storage/assets/index.a2dc5af3.js') }}"></script>--}}
     <style>
@@ -28,7 +28,7 @@
         }
 
         body, * {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Jost', sans-serif;
             font-size: 20px;
             line-height: 110%;
             letter-spacing: -.02em
@@ -228,10 +228,6 @@
         }
 
         .condition__content {
-            display: flex;
-            align-items: center;
-            gap: 80px;
-            width: 100%
         }
 
         .condition__side {
@@ -509,6 +505,45 @@
             margin: 0 auto
         }
     </style>
+
+    <style>
+        .header__right {
+            float: right;
+        }
+
+        .header__logo {
+            float: left;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .overview__content {
+            min-height: 200px;
+            margin-bottom: 100px;
+        }
+
+        .equipment__item-2 {
+            height: 30px
+        }
+
+        .overview__equipment {
+            width: 800px;
+        }
+
+        .condition {
+            height: 570px;
+        }
+
+        .condition__photos {
+            width: 1000px;
+        }
+    </style>
 </head>
 <body>
 <header class="header">
@@ -516,138 +551,76 @@
         <div class="header__logo">
             <img src="{{ public_path('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
-        <div class="header__contacts">
-            <a class="link contacts__link" href="">рус +7 910 966 54 12</a>
-            <a class="link contacts__link" href="">info@carexperts.ru</a>
+        <div class="header__right">
+            <svg width="161" height="161" viewBox="0 0 161 161" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="161" height="161" fill="url(#pattern0)"/>
+                <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_202_72" transform="translate(-0.05 -0.0833333) scale(0.00833333)"/>
+                    </pattern>
+                    <image id="image0_202_72" width="131" height="135"
+                           xlink:href="data:image/png;base64,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"/>
+                </defs>
+            </svg>
         </div>
-        <div class="header__date">
-            <div class="date__title">
-                Обновлено
-            </div>
-            <div class="date__date accent">
-                25 авг 2022
-            </div>
-        </div>
+
+
     </div>
 </header>
 <section class="overview">
     <div class="container">
         <div class="h1">Обзор автомобиля</div>
         <div class="overview__content">
-            <div class="overview__logo">
-                <img
-                    src="data:image/png;base64,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"
-                    alt="car-logo">
-            </div>
-            <div class="overview__name">
-                Mercedes-Benz
-                GL-Класс
-                500 II (X166)
-            </div>
-            <div class="overview__divider"></div>
-            <div class="overview__equipment">
-                <div class="equipment__title h3">
-                    Комплектация
+            <div class="overview__left left">
+
+                <div class="overview__logo">
+                    <img
+                        src="data:image/png;base64,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"
+                        alt="car-logo">
                 </div>
-                <div class="equipment__grid">
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/Add-icon.b3de98c7.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/Add-icon.b3de98c7.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
-                    <div class="equipment__item">
-                        <div class="item__icon">
-                            <img src="{{public_path('/storage/assets/Add-icon.b3de98c7.svg') }}" alt="icon">
-                        </div>
-                        <div class="item__name">
-                            Массаж сидений
-                        </div>
-                    </div>
+                <div class="overview__name">
+                    Mercedes-Benz
+                    GL-Класс
+                    500 II (X166)
                 </div>
             </div>
+            <div class="overview__right right">
+
+                <div class="overview__equipment">
+                    <div class="equipment__title h3">
+                        Комплектация
+                    </div>
+                    <table class="equipment__grid">
+                        @php
+                            $equipmentItems = [0,0,0,0];
+
+                            $rows = ceil(count($equipmentItems)/3);
+                        @endphp
+                        @for($i = 0; $i< $rows; $i++)
+                            <tr>
+
+                                @for($j = 3*$i; $j < 3*($i+1); $j++)
+                                    @isset($equipmentItems[$j])
+                                        <td class="equipment__item-2">
+                                            <div class="left">
+                                                <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}"
+                                                     alt="icon">
+                                            </div>
+                                            <div class="right">
+                                                Массаж сидений
+                                            </div>
+                                        </td>
+                                    @endif
+                                @endfor
+
+                            </tr>
+
+                        @endfor
+                    </table>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -745,14 +718,20 @@
 <section class="condition">
     <div class="container">
         <div class="h2">Состояние кузова</div>
-        <div class="condition__content">
-            <div class="condition__side condition__side-front">
-                <img src="{{public_path('/storage/assets/car-front.84b5798f.png') }}" alt="car-front">
-            </div>
-            <div class="condition__side condition__side-back">
-                <img src="{{public_path('/storage/assets/car-back.6bcf3ba5.png') }}" alt="car-back">
-            </div>
-            <div class="condition__measurement">
+        <table class="condition__content container">
+            <tr>
+
+            <td width="70%" class=" condition__photos">
+
+                <div class="condition__side condition__side-front left">
+                    <img src="{{public_path('/storage/assets/car-front.84b5798f.png') }}" alt="car-front">
+                </div>
+                <div class="condition__side condition__side-back right">
+                    <img src="{{public_path('/storage/assets/car-back.6bcf3ba5.png') }}" alt="car-back">
+                </div>
+            </td>
+
+            <td  width="30%" class="condition__measurement ">
                 <div class="measurement__values"></div>
                 <div class="measurement__titles">
                     <div class="titles__item">1000 + мкм</div>
@@ -761,8 +740,10 @@
                     <div class="titles__item">до 300 мкм</div>
                     <div class="titles__item">100 мкм</div>
                 </div>
-            </div>
-        </div>
+            </td>
+            </tr>
+
+        </table>
     </div>
 </section>
 <section class="recommendation">
