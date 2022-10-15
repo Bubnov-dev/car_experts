@@ -8,8 +8,8 @@
         "bold": "roboto_bold_8db5cb5d0586c1e891426d13097b1d04"
     },
     "jost": {
-        "normal": "C:\\Users\\1\\Desktop\\car_experts\\storage\\fonts\/jost_normal_895b81fde93c04dc8a2b957ff515e381",
-        "500": "jost_500_519614907cd59ad360dad45690e00259",
-        "bold": "C:\\Users\\1\\Desktop\\car_experts\\storage\\fonts\/jost_bold_1c3ef6f67944709bf967e2d4db292704"
+        "normal": "\/home\/sasha\/Documents\/car_experts\/storage\/fonts\/jost_normal_895b81fde93c04dc8a2b957ff515e381",
+        "500": "\/home\/sasha\/Documents\/car_experts\/storage\/fonts\/jost_500_519614907cd59ad360dad45690e00259",
+        "bold": "jost_bold_1c3ef6f67944709bf967e2d4db292704"
     }
 }

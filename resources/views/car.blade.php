@@ -45,9 +45,9 @@
         }
 
         .container {
-            width: 100%;
-            padding: 0 50px
-            /*margin: auto;*/
+            width: 1920px;
+            padding: 0 50px;
+            margin: auto;
             /*width: 1440px;*/
             /*max-width: 95vw*/
         }
@@ -163,19 +163,16 @@
 
         .overview__logo {
             margin-right: 30px;
-            padding: 40px;
-            min-width: 200px;
-            min-height: 200px;
+            width: 200px;
+            height: 200px;
             border: 1px rgba(0, 0, 0, .1) solid;
             border-radius: 6px
         }
 
         .overview__logo img {
-            max-width: 100%;
-            max-height: 100%;
+            margin: 40px;
             width: 120px;
             height: 120px;
-            margin: auto;
         }
 
         .overview__name {
@@ -192,8 +189,12 @@
         }
 
         .overview__equipment {
-            width: 600px;
+            width: 800px;
             margin-left: 50px;
+        }
+
+        .overview__right {
+            width: 1100px;
         }
 
         .overview__equipment .equipment__title {
@@ -228,6 +229,7 @@
             margin-top: 30px;
             font-size: 16px;
             line-height: 110%;
+            width: 200px;
         }
 
         .technical__table {
@@ -279,9 +281,10 @@
         }
 
         .condition__measurement {
-            margin: -25px 60px 0;
+            /*margin: -25px 60px 0;*/
             /*display: flex;*/
             /*gap: 20px*/
+            float: right;
         }
 
         .condition__measurement > * {
@@ -296,7 +299,7 @@
         }
 
         .condition__measurement .measurement__titles .titles__item {
-            margin-bottom: 55px;
+            margin-bottom: 25px;
             /*display: flex;*/
             /*flex-direction: column;*/
             /*justify-content: space-between*/
@@ -383,7 +386,12 @@
         }
 
         .report__slider.slider-for .slide__content {
-            max-width: 30%
+            /*max-width: 30%*/
+            /*padding-left: 40px;*/
+        }
+
+        .slide__content {
+            padding-left: 50px;
         }
 
         .report__slider.slider-nav {
@@ -467,9 +475,17 @@
             background-image: url('/storage/assets/img/arrow-left.svg')
         }
 
+        .report img {
+            margin-bottom: 50px;
+        }
+
         .components .flex {
             flex-wrap: wrap;
             gap: 30px
+        }
+
+        .components table, .components table img {
+            width: 100%
         }
 
         .components .grid {
@@ -482,21 +498,19 @@
             position: relative;
             width: 730px;
             border-radius: 6px;
-            overflow: hidden
+            /*overflow: hidden*/
         }
 
         .components__item .item__image {
-            max-width: 705px;
-            width: 100%;
-            height: 470px
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
-        .components__item .item__image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 6px
-        }
+        /*.components__item .item__image {*/
+        /*    max-width: 705px;*/
+        /*    width: 100%;*/
+        /*    height: 470px*/
+        /*}*/
 
         .components__item .item__image:after {
             content: "";
@@ -510,10 +524,10 @@
         }
 
         .components__item .item__text {
-            position: absolute;
-            left: 40px;
-            bottom: 40px;
-            margin-bottom: 0;
+            position: relative;
+            left: 80%;
+            bottom: 70px;
+            /*margin-bottom: 0;*/
             color: #fff
         }
 
@@ -598,9 +612,6 @@
             width: 30px
         }
 
-        .overview__equipment {
-            width: 600px;
-        }
 
         .condition {
             height: 570px;
@@ -615,24 +626,26 @@
         }
 
         .photo__with-comment {
+            width: 100%;
             margin-bottom: 60px;
         }
 
         .photo__with-comment:after {
-            content: " ";
-            display: table;
-            clear: both;
-            height: 0;
+            /*content: " ";*/
+            /*display: table;*/
+            /*clear: both;*/
+            /*height: 0;*/
         }
 
         .photo__with-comment img {
-            width: 900px;
-            height: 600px;
-            object-fit: cover;
+            width: 100%;
+            /*width: 900px;*/
+            /*height: 600px;*/
+            /*object-fit: cover;*/
         }
 
         .photo__with-comment .right {
-            max-width: 500px;
+            /*max-width: 500px;*/
         }
 
         .photo__with-comment .h2 {
@@ -648,14 +661,35 @@
             margin-right: 40px;
         }
 
+        .photo__comment, .photo__with-comment {
+            margin-bottom: 40px;
+        }
+
         .photo__comment > * {
-            display: inline-block;
-            max-width: 960px;
-            vertical-align: top;
         }
 
         .photo__comment .h2 {
             margin-right: 40px
+        }
+
+        .photo__comment * {
+            width: 100% !important;
+        }
+
+        .footer .contacts__link {
+            font-size: 30px;
+            margin-left: 100px;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
         }
     </style>
 </head>
@@ -666,17 +700,8 @@
             <img src="{{ public_path('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
         <div class="header__right">
-            <svg width="161" height="161" viewBox="0 0 161 161" fill="none" xmlns="http://www.w3.org/2000/svg"
-                 xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect width="161" height="161" fill="url(#pattern0)"/>
-                <defs>
-                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                        <use xlink:href="#image0_202_72" transform="translate(-0.05 -0.0833333) scale(0.00833333)"/>
-                    </pattern>
-                    <image id="image0_202_72" width="131" height="135"
-                           xlink:href="data:image/png;base64,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"/>
-                </defs>
-            </svg>
+            <img
+                src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(170)->generate('https://laravel.com')) !!} ">
         </div>
         <div class="header__qr-text">
             Отсканируйте QR-код,
@@ -709,28 +734,28 @@
                     </div>
                     <table class="equipment__grid">
                         @php
-                        $equipmentItems = [0,0,0,0];
+                            $equipmentItems = [0,0,0,0];
 
-                        $rows = ceil(count($equipmentItems)/3);
+                            $rows = ceil(count($equipmentItems)/3);
                         @endphp
                         @for($i = 0; $i< $rows; $i++)
-                        <tr>
+                            <tr>
 
-                            @for($j = 3*$i; $j < 3*($i+1); $j++)
-                            @isset($equipmentItems[$j])
-                            <td class="equipment__item-2">
-                                <div class="left">
-                                    <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}"
-                                         alt="icon">
-                                </div>
-                                <div class="right">
+                                @for($j = 3*$i; $j < 3*($i+1); $j++)
+                                    @isset($equipmentItems[$j])
+                                        <td class="equipment__item-2">
+                                <span class="">
+                                <img src="{{public_path('/storage/assets/massage.png') }}"
+                                     alt="icon">
+                                </span>
+                                            <span class="">
                                     Массаж сидений
-                                </div>
-                            </td>
-                            @endif
-                            @endfor
+                                </span>
+                                        </td>
+                                    @endif
+                                @endfor
 
-                        </tr>
+                            </tr>
 
                         @endfor
                     </table>
@@ -741,13 +766,13 @@
                         Дополнительные опции
                     </div>
                     <div class="addition__item">
-                        <div class="left">
-                            <img src="{{public_path('/storage/assets/massage.d98a0345.svg') }}"
+                        <span class="">
+                            <img src="{{public_path('/storage/assets/massage.png') }}"
                                  alt="icon">
-                        </div>
-                        <div class="right">
+                        </span>
+                        <span class="">
                             Массаж сидений
-                        </div>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -862,29 +887,16 @@
                 </td>
 
                 <td width="30%" class="condition__measurement ">
-                    <div class="measurement__values">
-                        <svg width="15" height="325" viewBox="0 0 15 325" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <rect width="15" height="325" rx="7.5" fill="url(#paint0_linear_202_1046)"/>
-                            <defs>
-                                <linearGradient id="paint0_linear_202_1046" x1="7.5" y1="0" x2="7.5" y2="325"
-                                                gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#CA120C"/>
-                                    <stop offset="0.234375" stop-color="#F70800"/>
-                                    <stop offset="0.494792" stop-color="#F7AD08"/>
-                                    <stop offset="0.75" stop-color="#F2F708"/>
-                                    <stop offset="1" stop-color="white" stop-opacity="0"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div class="measurement__titles">
+                    <span class="measurement__values">
+                        <img src="{{ public_path('/storage/assets/gradient.png') }}" alt="">
+                    </span>
+                    <span class="measurement__titles">
                         <div class="titles__item">1000 + мкм</div>
                         <div class="titles__item">до 800 мкм</div>
                         <div class="titles__item">до 500 мкм</div>
                         <div class="titles__item">до 300 мкм</div>
                         <div class="titles__item">100 мкм</div>
-                    </div>
+                    </span>
                 </td>
             </tr>
 
@@ -918,18 +930,66 @@
         </div>
     </div>
 </section>
+<footer class="footer">
+    <table class="container header__container">
+        <tr>
+
+            <td class="header__logo">
+                <img src="{{public_path('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
+            </td>
+            <td class="header__contacts">
+                <span class="link contacts__link" href="">+7 910 966 54 12</span>
+                <span class="link contacts__link" href="">info@carexperts.ru</span>
+            </td>
+            <td class="footer__qr right">
+                <img
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate('https://laravel.com')) !!} ">
+            </td>
+        </tr>
+
+    </table>
+</footer>
+
+<div class="page-break"></div>
+
+<header class="header ">
+    <div class="container header__container">
+        <div class="header__logo">
+            <img src="{{ public_path('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+        </div>
+
+    </div>
+</header>
 <section class="report">
     <div class="container">
-        <!--        <div class="h1">-->
-        <!--            <span class="report__title" id="photo-report">Фотоотчет</span>-->
-        <!--            <span class="report__divider"></span>-->
-        <!--            <span class="report__title not-active" id="video-report">Видеоотчет</span>-->
-        <!--        </div>-->
-        <div class="report__photo report__type">
-            <div class="photo__with-comment">
-                <img class="left" src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
-                <div class="right">
-                    <div class="slide__title h2">Комментарий</div>
+        <table>
+            <tr class="photo__with-comment">
+                <td width="55%" class="">
+                    <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
+                </td>
+                <td width="35%" class="slide__content">
+                    <div class="slide__title h2">1Комментарий</div>
+                    <div class="slide__desc">
+                        В целом, конечно, курс на социально-ориентированный национальный проект представляет
+                        собой интересный эксперимент проверки новых принципов формирования
+                        материально-технической и кадровой базы. Не следует, однако, забывать, что семантический
+                        разбор внешних противодействий позволяет выполнить важные задания по разработке
+                        направлений прогрессивного развития.
+                    </div>
+                </td>
+            </tr>
+            <tr class="photo__line">
+                <td>
+                    <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
+                </td>
+                <td>
+                    <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
+                </td>
+            </tr>
+            <tr class="">
+                <div>
+
+                    <div class="slide__title h2">Комментарий long</div>
                     <div class="slide__desc">
                         В целом, конечно, курс на социально-ориентированный национальный проект представляет
                         собой интересный эксперимент проверки новых принципов формирования
@@ -938,24 +998,14 @@
                         направлений прогрессивного развития.
                     </div>
                 </div>
-            </div>
-            <div class="photo__line">
-                <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
-                <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
-            </div>
-            <div class="photo__comment">
-                <div class="slide__title h2">Комментарий</div>
-                <div class="slide__desc">
-                    В целом, конечно, курс на социально-ориентированный национальный проект представляет
-                    собой интересный эксперимент проверки новых принципов формирования
-                    материально-технической и кадровой базы. Не следует, однако, забывать, что семантический
-                    разбор внешних противодействий позволяет выполнить важные задания по разработке
-                    направлений прогрессивного развития.
-                </div>
-            </div>
-            <div class="photo__with-comment">
-                <img class="left" src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
-                <div class="slide__content">
+
+            </tr>
+            <tr class="photo__with-comment">
+                <td width="60%">
+                    <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
+                </td>
+
+                <td class="slide__content">
                     <div class="slide__title h2">Комментарий</div>
                     <div class="slide__desc">
                         В целом, конечно, курс на социально-ориентированный национальный проект представляет
@@ -964,154 +1014,129 @@
                         разбор внешних противодействий позволяет выполнить важные задания по разработке
                         направлений прогрессивного развития.
                     </div>
-                </div>
-            </div>
-            <!--            <div class="report__slider slider-for">-->
-            <!--                <div class="slide">-->
-            <!--                    <div class="slide__image">-->
-            <!--                        <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">-->
-            <!--                    </div>-->
-            <!--                    <div class="slide__content">-->
-            <!--                        <div class="slide__title h2">Комментарий 1</div>-->
-            <!--                        <div class="slide__desc">-->
-            <!--                            В целом, конечно, курс на социально-ориентированный национальный проект представляет-->
-            <!--                            собой интересный эксперимент проверки новых принципов формирования-->
-            <!--                            материально-технической и кадровой базы. Не следует, однако, забывать, что семантический-->
-            <!--                            разбор внешних противодействий позволяет выполнить важные задания по разработке-->
-            <!--                            направлений прогрессивного развития.-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="slide">-->
-            <!--                    <div class="slide__image">-->
-            <!--                        <img src="{{public_path('/storage/assets/slide2.e3d73fb2.png') }}" alt="slide">-->
-            <!--                    </div>-->
-            <!--                    <div class="slide__content">-->
-            <!--                        <div class="slide__title h2">Комментарий 2</div>-->
-            <!--                        <div class="slide__desc">-->
-            <!--                            В целом, конечно, курс на социально-ориентированный национальный проект представляет-->
-            <!--                            собой интересный эксперимент проверки новых принципов формирования-->
-            <!--                            материально-технической и кадровой базы. Не следует, однако, забывать, что семантический-->
-            <!--                            разбор внешних противодействий позволяет выполнить важные задания по разработке-->
-            <!--                            направлений прогрессивного развития.-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="slide">-->
-            <!--                    <div class="slide__image">-->
-            <!--                        <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">-->
-            <!--                    </div>-->
-            <!--                    <div class="slide__content">-->
-            <!--                        <div class="slide__title h2">Комментарий 3</div>-->
-            <!--                        <div class="slide__desc">-->
-            <!--                            В целом, конечно, курс на социально-ориентированный национальный проект представляет-->
-            <!--                            собой интересный эксперимент проверки новых принципов формирования-->
-            <!--                            материально-технической и кадровой базы. Не следует, однако, забывать, что семантический-->
-            <!--                            разбор внешних противодействий позволяет выполнить важные задания по разработке-->
-            <!--                            направлений прогрессивного развития.-->
-            <!--                            В целом, конечно, курс на социально-ориентированный национальный проект представляет-->
-            <!--                            собой интересный эксперимент проверки новых принципов формирования-->
-            <!--                            материально-технической и кадровой базы. Не следует, однако, забывать, что семантический-->
-            <!--                            разбор внешних противодействий позволяет выполнить важные задания по разработке-->
-            <!--                            направлений прогрессивного развития.-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="slide">-->
-            <!--                    <div class="slide__image">-->
-            <!--                        <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">-->
-            <!--                    </div>-->
-            <!--                    <div class="slide__content">-->
-            <!--                        <div class="slide__title h2">Комментарий 3</div>-->
-            <!--                        <div class="slide__desc">-->
-            <!--                            В целом, конечно, курс на социально-ориентированный национальный проект представляет-->
-            <!--                            собой интересный эксперимент проверки новых принципов формирования-->
-            <!--                            материально-технической и кадровой базы. Не следует, однако, забывать, что семантический-->
-            <!--                            разбор внешних противодействий позволяет выполнить важные задания по разработке-->
-            <!--                            направлений прогрессивного развития.-->
-            <!--                            В целом, конечно, курс на социально-ориентированный национальный проект представляет-->
-            <!--                            собой интересный эксперимент проверки новых принципов формирования-->
-            <!--                            материально-технической и кадровой базы. Не следует, однако, забывать, что семантический-->
-            <!--                            разбор внешних противодействий позволяет выполнить важные задания по разработке-->
-            <!--                            направлений прогрессивного развития.-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--            <div class="report__slider slider-nav">-->
-            <!--                <div class="slide">-->
-            <!--                    <div class="slide__image-wrapper">-->
-            <!--                        <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="slide">-->
-            <!--                    <div class="slide__image-wrapper">-->
-            <!--                        <img src="{{public_path('/storage/assets/slide2.e3d73fb2.png') }}" alt="slide">-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="slide">-->
-            <!--                    <div class="slide__image-wrapper">-->
-            <!--                        <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                <div class="slide">-->
-            <!--                    <div class="slide__image-wrapper">-->
-            <!--                        <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-        </div>
-        <!--        <div class="report__video report__type not-active">-->
-        <!--            <video muted autoplay loop type='video/mp4'>-->
-        <!--                <source src="https://onlycars.vip/img/1-masina-16x9_KbiJuPj6.mp4">-->
-        <!--            </video>-->
-        <!--        </div>-->
+                </td>
+            </tr>
+
+        </table>
     </div>
 </section>
+<footer class="footer">
+    <table class="container header__container">
+        <tr>
+
+            <td class="header__logo">
+                <img src="{{public_path('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
+            </td>
+            <td class="header__contacts">
+                <span class="link contacts__link" href="">+7 910 966 54 12</span>
+                <span class="link contacts__link" href="">info@carexperts.ru</span>
+            </td>
+            <td class="footer__qr right">
+                <img
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate('https://laravel.com')) !!} ">
+            </td>
+        </tr>
+
+    </table>
+</footer>
+
+<div class="page-break"></div>
+
+
+<header class="header ">
+    <div class="container header__container">
+        <div class="header__logo">
+            <img src="{{ public_path('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+        </div>
+
+    </div>
+</header>
 <section class="components">
     <div class="container">
         <div class="h2">Технические компоненты</div>
-        <div class="flex">
-            <div class="components__item item">
-                <div class="item__image">
-                    <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
-                </div>
-                <div class="item__text h2">VIN</div>
-            </div>
-            <div class="components__item item">
-                <div class="item__image">
-                    <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="vin">
-                </div>
-                <div class="item__text h2">VIN</div>
-            </div>
-        </div>
+        <table>
+            <tr>
+
+                <td class="components__item item">
+                    <div class="item__image">
+                        <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
+                    </div>
+                    <div class="item__text h2">VIN</div>
+                </td>
+                <td class="components__item item">
+                    <div class="item__image">
+                        <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="vin">
+                    </div>
+                    <div class="item__text h2">VIN</div>
+                </td>
+            </tr>
+        </table>
     </div>
 </section>
 <section class="components">
     <div class="container">
         <div class="h1">Покрышки</div>
-        <div class="flex">
-            <div class="components__item item">
-                <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
-                <div class="item__desc">
-                    Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
-                    выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
-                    конкурентов представляют собой, как квинтэссенцию победы маркетинга над разумом и должны быть
-                    объявлены.
-                </div>
-            </div>
-            <div class="components__item item">
-                <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
-                <div class="item__desc">
-                    Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
-                    выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
-                    конкурентов представляют собой, как квинтэссенцию победы маркетинга над разумом и должны быть
-                    объявлены.
-                </div>
-            </div>
-        </div>
+        <table>
+            <tr>
+                <td class="components__item item">
+                    <div class="item__image">
+                        <img src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
+                    </div>
+                    <div class="item__desc">
+                        Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
+                        выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
+                        конкурентов представляют собой, как квинтэссенцию победы маркетинга над разумом и должны быть
+                        объявлены.
+                    </div>
+                </td>
+                <td class="components__item item">
+                    <div class="item__image">
+                        <img src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
+                    </div>
+
+                    <div class="item__desc">
+                        Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
+                        выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
+                        конкурентов представляют собой, как квинтэссенцию победы маркетинга над разумом и должны быть
+                        объявлены.
+                    </div>
+                </td>
+            </tr>
+
+        </table>
     </div>
 </section>
+<footer class="footer">
+    <table class="container header__container">
+        <tr>
+
+            <td class="header__logo">
+                <img src="{{public_path('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
+            </td>
+            <td class="header__contacts">
+                <span class="link contacts__link" href="">+7 910 966 54 12</span>
+                <span class="link contacts__link" href="">info@carexperts.ru</span>
+            </td>
+            <td class="footer__qr right">
+                <img
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate('https://laravel.com')) !!} ">
+            </td>
+        </tr>
+
+    </table>
+</footer>
+
+<div class="page-break"></div>
+
+
+<header class="header ">
+    <div class="container header__container">
+        <div class="header__logo">
+            <img src="{{ public_path('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+        </div>
+
+    </div>
+</header>
 <section class="components">
     <div class="container">
         <div class="h1">Повреждения</div>
@@ -1187,44 +1212,23 @@
     </div>
 </section>
 <footer class="footer">
-    <div class="container header__container">
-        <div class="header__logo">
-            <img src="{{public_path('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
-        </div>
-        <div class="header__contacts">
-            <a class="link contacts__link" href="">+7 910 966 54 12</a>
-            <a class="link contacts__link" href="">info@carexperts.ru</a>
-        </div>
-    </div>
-    <div class="container footer__container flex">
-        <div class="header__date footer__date">
-            <div class="date__title">
-                Дата диагностики
-            </div>
-            <div class="date__date accent">
-                25 авг 2022
-            </div>
-        </div>
-        <div class="header__date footer__date">
-            <div class="date__title">
-                Обновлено
-            </div>
-            <div class="date__date accent">
-                25 авг 2022
-            </div>
-        </div>
-        <div class="header__date footer__date">
-            <div class="date__title">
-                Номер диагностики
-            </div>
-            <div class="date__date accent">
-                25 авг 2022
-            </div>
-        </div>
-        <div class="btn footer__btn">
-            Скачать PDF-версию
-        </div>
-    </div>
+    <table class="container header__container">
+        <tr>
+
+            <td class="header__logo">
+                <img src="{{public_path('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
+            </td>
+            <td class="header__contacts">
+                <span class="link contacts__link" href="">+7 910 966 54 12</span>
+                <span class="link contacts__link" href="">info@carexperts.ru</span>
+            </td>
+            <td class="footer__qr right">
+                <img
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate('https://laravel.com')) !!} ">
+            </td>
+        </tr>
+
+    </table>
 </footer>
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
