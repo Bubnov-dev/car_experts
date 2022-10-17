@@ -45,7 +45,7 @@
         }
 
         .container {
-            width: 1920px;
+            width: 1600px;
             padding: 0 50px;
             margin: auto;
             /*width: 1440px;*/
@@ -142,9 +142,9 @@
             font-size: 16px;
             color: #222222;
             opacity: 0.5;
-            width: 155px;
+            width: 160px;
             float: right;
-            margin-right: 30px;
+            margin-right: 70px;
         }
 
         .overview {
@@ -179,7 +179,7 @@
             margin-right: 80px;
             max-width: 215px;
             font-size: 30px;
-            line-height: 36px;
+            line-height: 30px;
         }
 
         .overview__divider {
@@ -188,13 +188,24 @@
             opacity: .1
         }
 
+        .overview__divider.right{
+            margin-right: 20px;
+        }
+
+        .overview__divider::after{
+
+            content: " ";
+            display: table;
+            clear: both;
+        }
+
         .overview__equipment {
             width: 800px;
             margin-left: 50px;
         }
 
         .overview__right {
-            width: 1100px;
+            width: 800px;
         }
 
         .overview__equipment .equipment__title {
@@ -222,33 +233,43 @@
         }
 
         .overview__addition {
-            margin-left: 50px;
+            margin-right: -250px;
         }
 
         .overview__addition .addition__item {
             margin-top: 30px;
             font-size: 16px;
             line-height: 110%;
-            width: 200px;
-        }
-
-        .technical__table {
-            width: 100%;
-            border-collapse: collapse
-        }
-
-        .technical__table tr:first-child td {
-            border-top: none
-        }
-
-        .technical__table tr:last-child td {
-            border-bottom: none
+            /*width: 200px;*/
         }
 
         .technical__table tr td {
             padding: 30px 40px;
             border: 1px rgba(0, 0, 0, .1) solid
         }
+
+        .technical__table {
+            width: 100%;
+            border-collapse: collapse;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        .technical__table tr:first-child td {
+            border-top: none
+        }
+        .nbt, .nbt *{
+            border-top: none !important
+        }
+
+
+        .nbb, .nbb *{
+            border-bottom: none !important
+        }
+        .technical__table tr:last-child td {
+            border-bottom: none !important
+        }
+
 
         .technical__table tr td:first-child {
             padding-left: 0;
@@ -273,9 +294,20 @@
         }
 
         .condition__side {
-            position: relative
+            position: relative;
+            width: 600px;
+            display: inline-block;
         }
 
+
+        .condition__side:first-child img {
+            width: 500px;
+        }
+
+
+        .condition__side:last-child img {
+            width: 600px;
+        }
         .condition__icon {
             position: absolute
         }
@@ -285,6 +317,9 @@
             /*display: flex;*/
             /*gap: 20px*/
             float: right;
+            position: relative;
+            right: -100px;
+            margin-right: -100px;
         }
 
         .condition__measurement > * {
@@ -293,13 +328,23 @@
 
         .condition__measurement .measurement__values {
             width: 15px;
-            height: 325px;
+            height: 80%;
             border-radius: 100px;
+
             /*background: linear-gradient(180deg, #CA120C 0%, #F70800 23.44%, #F7AD08 49.48%, #F2F708 75%, rgba(255, 255, 255, 0) 100%)*/
         }
+        .condition__measurement .measurement__values img{
+            height: 100%;
+        }
+        .condition__measurement .measurement__titles{
 
+            display: inline-block;
+            margin-left: 25px;
+            position: relative;
+            top: -60px;
+        }
         .condition__measurement .measurement__titles .titles__item {
-            margin-bottom: 25px;
+            margin-bottom: 60px;
             /*display: flex;*/
             /*flex-direction: column;*/
             /*justify-content: space-between*/
@@ -309,6 +354,9 @@
             margin-bottom: 0;
         }
 
+        .recommendation .h2{
+            margin-bottom: 50px !important;
+        }
         .recommendation__text p:last-child {
             margin-bottom: 0
         }
@@ -386,12 +434,14 @@
         }
 
         .report__slider.slider-for .slide__content {
+            height: 100%;
             /*max-width: 30%*/
             /*padding-left: 40px;*/
         }
 
         .slide__content {
             padding-left: 50px;
+            vertical-align: top;
         }
 
         .report__slider.slider-nav {
@@ -479,9 +529,22 @@
             margin-bottom: 50px;
         }
 
+        .report .photo__line img:first-child{
+            margin-right: 50px;
+        }
+
+        .photo__line img{
+            max-width: 95%;
+        }
+
+        .components{
+            padding-top: 0;
+        }
+
         .components .flex {
             flex-wrap: wrap;
-            gap: 30px
+            gap: 30px;
+
         }
 
         .components table, .components table img {
@@ -501,9 +564,11 @@
             /*overflow: hidden*/
         }
 
-        .components__item .item__image {
-            padding-left: 20px;
+        .components__item .item__image:first-child {
             padding-right: 20px;
+        }
+        .components__item .item__image:last-child {
+            padding-left: 20px;
         }
 
         /*.components__item .item__image {*/
@@ -525,7 +590,7 @@
 
         .components__item .item__text {
             position: relative;
-            left: 80%;
+            left: 20px;
             bottom: 70px;
             /*margin-bottom: 0;*/
             color: #fff
@@ -541,13 +606,36 @@
 
         .footer .header__container {
             padding: 120px 0 50px;
-            border-top: 1px rgba(0, 0, 0, .1) solid
+            border-top: 1px rgba(0, 0, 0, .1) solid;
+            margin-left: 60px;
+        }
+
+        .footer .header__logo {
+            width: 160px;
+        }
+
+
+        .footer .header__logo::after {
+            content: " ";
+            display: table;
+            clear: both;
+            height: 0;
+            width: fit-content;
+            margin-left: 30px;
         }
 
         .footer .footer__container {
             gap: 30px;
             align-items: flex-end;
             padding-bottom: 120px
+        }
+
+        .footer__qr {
+            margin-right: 80px;
+            padding: 10px;
+            border-radius: 15px 0;
+            border: 1px solid black;
+            width: 100px;
         }
 
         .footer__date {
@@ -618,7 +706,7 @@
         }
 
         .condition__photos {
-            width: 1000px;
+            width: 1300px;
         }
 
         .report__photo > * {
@@ -681,6 +769,20 @@
             margin-left: 100px;
             white-space: nowrap;
             position: relative;
+            line-height: 38px;
+            vertical-align: bottom;
+            margin-top: 5px;
+        }
+        .footer .header__date {
+            height: 110px;
+            width: 160px;
+            text-align: left;
+        }
+        .footer .date__date {
+            margin-bottom: 40px;
+        }
+        .footer .header__qr-text {
+            margin-left: auto;
         }
 
         .page-break {
@@ -691,6 +793,33 @@
             position: absolute;
             bottom: 10px;
         }
+
+
+        header .header__logo, header .header__logo img {
+            width: 387px;
+        }
+        .header__qr {
+            border-radius: 20px 0;
+            padding: 15px;
+            border: 1px solid black;
+        }
+
+        h1{
+            font-size: 120px !important;
+            font-weight: 500 !important;
+            line-height: 132px !important;
+            letter-spacing: -0.02em !important;
+            text-align: left;
+
+        }
+
+        .mw960{
+            max-width: 1500px;
+        }
+
+        .brakes{
+            padding-top: 100px;
+        }
     </style>
 </head>
 <body>
@@ -700,8 +829,11 @@
             <img src="{{ public_path('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
         <div class="header__right">
-            <img
-                src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(170)->generate('https://laravel.com')) !!} ">
+            <div class="header__qr">
+                <img
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(140)->generate('https://laravel.com')) !!} ">
+            </div>
+
         </div>
         <div class="header__qr-text">
             Отсканируйте QR-код,
@@ -712,7 +844,7 @@
 </header>
 <section class="overview">
     <div class="container">
-        <div class="h1">Обзор автомобиля</div>
+        <h1 class="h1">Обзор автомобиля</h1>
         <div class="overview__content">
             <div class="overview__left left">
                 <div class="overview__logo left">
@@ -760,7 +892,7 @@
                         @endfor
                     </table>
                 </div>
-                <div class="overview__divider left"></div>
+
                 <div class="overview__addition right">
                     <div class="h3">
                         Дополнительные опции
@@ -775,6 +907,8 @@
                         </span>
                     </div>
                 </div>
+                <div class="overview__divider  right"></div>
+
             </div>
         </div>
     </div>
@@ -783,7 +917,7 @@
     <div class="container">
         <div class="h2">Технические характеристики</div>
         <table class="technical__table">
-            <tr>
+            <tr class="nbt">
                 <td>
                     <div class="technical__title">
                         Год выпуска
@@ -825,7 +959,7 @@
                     </div>
                 </td>
             </tr>
-            <tr>
+            <tr class="nbb">
                 <td>
                     <div class="technical__title">
                         Цвет
@@ -876,27 +1010,27 @@
         <table class="condition__content container">
             <tr>
 
-                <td width="70%" class=" condition__photos">
+                <td width="75%" class=" condition__photos">
 
-                    <div class="condition__side condition__side-front left">
+                    <div class="condition__side condition__side-front">
                         <img src="{{public_path('/storage/assets/car-front.84b5798f.png') }}" alt="car-front">
                     </div>
-                    <div class="condition__side condition__side-back right">
+                    <div class="condition__side condition__side-back">
                         <img src="{{public_path('/storage/assets/car-back.6bcf3ba5.png') }}" alt="car-back">
                     </div>
                 </td>
 
-                <td width="30%" class="condition__measurement ">
+                <td width="25%" class="condition__measurement ">
                     <span class="measurement__values">
                         <img src="{{ public_path('/storage/assets/gradient.png') }}" alt="">
                     </span>
-                    <span class="measurement__titles">
+                    <div class="measurement__titles">
                         <div class="titles__item">1000 + мкм</div>
                         <div class="titles__item">до 800 мкм</div>
                         <div class="titles__item">до 500 мкм</div>
                         <div class="titles__item">до 300 мкм</div>
                         <div class="titles__item">100 мкм</div>
-                    </span>
+                    </div>
                 </td>
             </tr>
 
@@ -931,23 +1065,30 @@
     </div>
 </section>
 <footer class="footer">
-    <table class="container header__container">
-        <tr>
-
-            <td class="header__logo">
-                <img src="{{public_path('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
-            </td>
-            <td class="header__contacts">
-                <span class="link contacts__link" href="">+7 910 966 54 12</span>
-                <span class="link contacts__link" href="">info@carexperts.ru</span>
-            </td>
-            <td class="footer__qr right">
+    <div class="container header__container">
+        <div>
+            <span class="header__date left">
+                <div class="header__date">
+                    <div class="date__date accent">
+                        Дата
+                    </div>
+                    <div class="date__title">
+                        25 августа 2022
+                    </div>
+                </div>
+            </span>
+            <span class="footer__qr right">
                 <img
                     src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate('https://laravel.com')) !!} ">
-            </td>
-        </tr>
+            </span>
+            <span class="header__qr-text">
+                <div class="header__qr-text">
+                    Report Online
+                </div>
+            </span>
+        </div>
 
-    </table>
+    </div>
 </footer>
 
 <div class="page-break"></div>
@@ -967,7 +1108,7 @@
                 <td width="55%" class="">
                     <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
                 </td>
-                <td width="35%" class="slide__content">
+                <td  class="slide__content">
                     <div class="slide__title h2">1Комментарий</div>
                     <div class="slide__desc">
                         В целом, конечно, курс на социально-ориентированный национальный проект представляет
@@ -978,6 +1119,8 @@
                     </div>
                 </td>
             </tr>
+        </table>
+        <table>
             <tr class="photo__line">
                 <td>
                     <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
@@ -986,8 +1129,10 @@
                     <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
                 </td>
             </tr>
+        </table>
+        <table>
             <tr class="">
-                <div>
+                <div class="mw960">
 
                     <div class="slide__title h2">Комментарий long</div>
                     <div class="slide__desc">
@@ -1000,8 +1145,10 @@
                 </div>
 
             </tr>
+        </table>
+        <table>
             <tr class="photo__with-comment">
-                <td width="60%">
+                <td width="55%">
                     <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
                 </td>
 
@@ -1137,7 +1284,7 @@
 
     </div>
 </header>
-<section class="components">
+<section class="components brakes">
     <div class="container">
         <div class="h1">Повреждения</div>
         <div class="grid hidden">

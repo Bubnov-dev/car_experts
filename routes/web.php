@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('car');
 });
 
+Route::get('/newInvoice',  [\App\Http\Controllers\Controller::class, 'newInvoice']);
+Route::post('/newInvoice',  [\App\Http\Controllers\Controller::class, 'newInvoice']);
+
+
 Route::get('/pdf', [\App\Http\Controllers\Controller::class, 'getPdf']);
