@@ -188,11 +188,11 @@
             opacity: .1
         }
 
-        .overview__divider.right{
+        .overview__divider.right {
             margin-right: 20px;
         }
 
-        .overview__divider::after{
+        .overview__divider::after {
 
             content: " ";
             display: table;
@@ -258,14 +258,16 @@
         .technical__table tr:first-child td {
             border-top: none
         }
-        .nbt, .nbt *{
+
+        .nbt, .nbt * {
             border-top: none !important
         }
 
 
-        .nbb, .nbb *{
+        .nbb, .nbb * {
             border-bottom: none !important
         }
+
         .technical__table tr:last-child td {
             border-bottom: none !important
         }
@@ -308,6 +310,7 @@
         .condition__side:last-child img {
             width: 600px;
         }
+
         .condition__icon {
             position: absolute
         }
@@ -333,16 +336,19 @@
 
             /*background: linear-gradient(180deg, #CA120C 0%, #F70800 23.44%, #F7AD08 49.48%, #F2F708 75%, rgba(255, 255, 255, 0) 100%)*/
         }
-        .condition__measurement .measurement__values img{
+
+        .condition__measurement .measurement__values img {
             height: 100%;
         }
-        .condition__measurement .measurement__titles{
+
+        .condition__measurement .measurement__titles {
 
             display: inline-block;
             margin-left: 25px;
             position: relative;
             top: -60px;
         }
+
         .condition__measurement .measurement__titles .titles__item {
             margin-bottom: 60px;
             /*display: flex;*/
@@ -354,9 +360,10 @@
             margin-bottom: 0;
         }
 
-        .recommendation .h2{
+        .recommendation .h2 {
             margin-bottom: 50px !important;
         }
+
         .recommendation__text p:last-child {
             margin-bottom: 0
         }
@@ -529,15 +536,15 @@
             margin-bottom: 50px;
         }
 
-        .report .photo__line img:first-child{
+        .report .photo__line img:first-child {
             margin-right: 50px;
         }
 
-        .photo__line img{
+        .photo__line img {
             max-width: 95%;
         }
 
-        .components{
+        .components {
             padding-top: 0;
         }
 
@@ -567,6 +574,7 @@
         .components__item .item__image:first-child {
             padding-right: 20px;
         }
+
         .components__item .item__image:last-child {
             padding-left: 20px;
         }
@@ -773,14 +781,17 @@
             vertical-align: bottom;
             margin-top: 5px;
         }
+
         .footer .header__date {
             height: 110px;
             width: 160px;
             text-align: left;
         }
+
         .footer .date__date {
             margin-bottom: 40px;
         }
+
         .footer .header__qr-text {
             margin-left: auto;
         }
@@ -798,13 +809,14 @@
         header .header__logo, header .header__logo img {
             width: 387px;
         }
+
         .header__qr {
             border-radius: 20px 0;
             padding: 15px;
             border: 1px solid black;
         }
 
-        h1{
+        h1 {
             font-size: 120px !important;
             font-weight: 500 !important;
             line-height: 132px !important;
@@ -813,12 +825,24 @@
 
         }
 
-        .mw960{
+        .mw960 {
             max-width: 1500px;
         }
 
-        .brakes{
+        .brakes {
             padding-top: 100px;
+        }
+
+
+        .image-color{
+            width: 34px;
+            height: 34px;
+            position: absolute;
+        }
+
+        .image-color.bonner{
+            left: 100px;
+            bottom: 100px;
         }
     </style>
 </head>
@@ -1013,6 +1037,18 @@
                 <td width="75%" class=" condition__photos">
 
                     <div class="condition__side condition__side-front">
+                        <div class="image-color bonner">
+                            @php
+                                $svg = '<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.53334 17L13.6 7.93337L14.7333 7.3667L23.8 16.4334L22.6667 17.5667C18.7 18.5111 10.6533 20.4 10.2 20.4C9.63334 20.4 5.10001 18.7 5.10001 18.1334C5.10001 17.68 4.72223 17.1889 4.53334 17Z" fill="white"/>
+                                    <path d="M15.3 4.2499C15.3 4.02447 15.2104 3.80827 15.051 3.64886C14.8916 3.48946 14.6754 3.3999 14.45 3.3999C14.2246 3.3999 14.0084 3.48946 13.849 3.64886C13.6895 3.80827 13.6 4.02447 13.6 4.2499V6.7999C13.2515 6.9223 12.9251 7.1229 12.648 7.4017L4.0001 16.0462C3.76313 16.283 3.57516 16.5642 3.4469 16.8737C3.31865 17.1832 3.25264 17.5149 3.25264 17.8499C3.25264 18.1849 3.31865 18.5166 3.4469 18.8261C3.57516 19.1356 3.76313 19.4168 4.0001 19.6536L11.3696 27.0231C11.6064 27.2601 11.8876 27.448 12.1971 27.5763C12.5066 27.7045 12.8383 27.7706 13.1733 27.7706C13.5083 27.7706 13.84 27.7045 14.1495 27.5763C14.459 27.448 14.7402 27.2601 14.977 27.0231L23.6215 18.3786C23.8585 18.1418 24.0464 17.8606 24.1747 17.5511C24.3029 17.2416 24.369 16.9099 24.369 16.5749C24.369 16.2399 24.3029 15.9082 24.1747 15.5987C24.0464 15.2892 23.8585 15.008 23.6215 14.7712L16.2537 7.4017C15.9849 7.13217 15.659 6.9265 15.3 6.7999V4.2499ZM22.5573 16.9999H5.4519L13.6 8.8518V11.0499C13.6 11.2753 13.6895 11.4915 13.849 11.6509C14.0084 11.8103 14.2246 11.8999 14.45 11.8999C14.6754 11.8999 14.8916 11.8103 15.051 11.6509C15.2104 11.4915 15.3 11.2753 15.3 11.0499V8.8518L22.423 15.9748C22.555 16.1071 22.6396 16.2793 22.6639 16.4646C22.6882 16.6499 22.6507 16.838 22.5573 16.9999V16.9999ZM27.2272 19.3663C27.1379 19.2128 27.0099 19.0855 26.856 18.9969C26.702 18.9084 26.5276 18.8618 26.35 18.8618C26.1724 18.8618 25.998 18.9084 25.844 18.9969C25.6901 19.0855 25.5621 19.2128 25.4728 19.3663L22.6644 24.1824C21.0035 27.0265 23.0554 30.5999 26.35 30.5999C29.6429 30.5999 31.6965 27.0265 30.0356 24.1824L27.2272 19.3663Z" fill="#D61009"/>
+                                    </svg>
+                                    ';
+
+                                $html = '<img src="data:image/svg+xml;base64,'.base64_encode($svg).'"  width="100" height="100" />';
+                            @endphp
+                            {!! $html !!}
+                        </div>
                         <img src="{{public_path('/storage/assets/car-front.84b5798f.png') }}" alt="car-front">
                     </div>
                     <div class="condition__side condition__side-back">
@@ -1108,7 +1144,7 @@
                 <td width="55%" class="">
                     <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
                 </td>
-                <td  class="slide__content">
+                <td class="slide__content">
                     <div class="slide__title h2">1Комментарий</div>
                     <div class="slide__desc">
                         В целом, конечно, курс на социально-ориентированный национальный проект представляет
