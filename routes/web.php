@@ -14,11 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/car', function () {
     return view('car');
 });
-
-Route::get('/newInvoice',  [\App\Http\Controllers\Controller::class, 'newInvoice']);
 Route::post('/newInvoice',  [\App\Http\Controllers\Controller::class, 'newInvoice']);
+Route::post('/newInvoice2',  function (){
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    $answers = $data['answers'];
+    $phone = $data['contacts']['phone'];
+    $email = $data['contacts']['email'];
+    $name = $data['contacts']['name'];
+    $createdDate = strtotime($data['created']);
+    $utm = $data['extra']['utm'];
+    $rawAnswers = $data['raw'];
+
+    // Do anything
+    \Illuminate\Support\Facades\Log::info($data);
+
+    http_response_code(200);
+    exit;
+});
 
 
 Route::get('/pdf', [\App\Http\Controllers\Controller::class, 'getPdf']);
