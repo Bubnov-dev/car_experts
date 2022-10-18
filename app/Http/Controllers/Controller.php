@@ -27,5 +27,6 @@ class Controller extends BaseController
 
     public function newInvoice(Request $request) {
         Log::info($request->all());
+        return response();
     }
 }
