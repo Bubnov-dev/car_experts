@@ -1,0 +1,291 @@
+.tires-chars__text {
+    display: flex;
+    gap: 16px;
+
+}
+
+.tires-chars__title {
+    margin-bottom: 22px;
+}
+
+.tires-chars__box {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.tires-line {
+    border-bottom: 1px solid #222;
+    width: 215px;
+    margin: 30px 0;
+}
+
+.tires-photo img {
+    height: 260px;
+}
+
+.components__item .item__image {
+
+    object-fit: cover;
+}
+
+.condition__value img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.condition__side .Hood {
+    top: 112px;
+    left: 96px;
+}
+
+.condition__side .Back-cover {
+    top: 82px;
+    left: 90px;
+}
+
+.condition__side .Front-left-door {
+    top: 130px;
+    left: 245px;
+}
+
+.condition__side .Front-right-door {
+    top: 112px;
+    right: 80px;
+}
+
+.condition__side .Left-rear-door {
+    top: 118px;
+    left: 298px;
+}
+
+.condition__side .Right-rear-door {
+    top: 112px;
+    left: 264px;
+}
+
+.condition__side .Left-front-wing {
+    top: 130px;
+    left: 195px;
+}
+
+.condition__side .Right-front-wing {
+    top: 107px;
+    right: 35px;
+}
+
+.condition__side .Left-rear-wing {
+    top: 94px;
+    right: 44px;
+}
+
+.condition__side .Right-rear-wing {
+    top: 93px;
+    left: 185px;
+}
+
+.condition__side .Left-front-rack {
+    top: 71px;
+    left: 235px;
+}
+
+.condition__side .Right-front-rack {
+    top: 61px;
+    right: 93px;
+}
+
+.condition__side .Left-rear-rack {
+    top: 72px;
+    right: 80px;
+}
+
+.condition__side .Right-rear-rack {
+    top: 65px;
+    left: 223px;
+}
+
+.condition__side .Left-middle-rack {
+    top: 73px;
+    left: 271px;
+}
+
+.condition__side .Right-middle-rack {
+    top: 64px;
+    right: 126px;
+}
+
+.condition__side .Roof {
+    top: 50px;
+    left: 212px;
+}
+
+.condition__side .Mirrors {
+    top: 82px;
+    left: 118px;
+}
+
+.condition__side .Front-bumper {
+    top: 166px;
+    left: 78px;
+}
+
+.condition__side .Rear-bumper {
+    top: 125px;
+    left: 90px;
+}
+
+@media screen and (max-width: 1024px) {
+    .condition__side {
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .condition__value img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .condition__side .Hood {
+        top: 55px;
+        left: 52px;
+    }
+
+    .condition__side .Back-cover {
+        top: 41px;
+        left: 45px;
+    }
+
+    .condition__side .Front-left-door {
+        top: 62px;
+        left: 122px;
+    }
+
+    .condition__side .Front-right-door {
+        top: 56px;
+        right: 48px;
+    }
+
+    .condition__side .Left-rear-door {
+        top: 59px;
+        left: 149px;
+    }
+
+    .condition__side .Right-rear-door {
+        top: 56px;
+        left: 132px;
+    }
+
+    .condition__side .Left-front-wing {
+        top: 62px;
+        left: 89px;
+    }
+
+    .condition__side .Right-front-wing {
+        top: 53px;
+        right: 16px;
+    }
+
+    .condition__side .Left-rear-wing {
+        top: 47px;
+        right: 22px;
+    }
+
+    .condition__side .Right-rear-wing {
+        top: 46px;
+        left: 92px;
+    }
+
+    .condition__side .Left-front-rack {
+        top: 35px;
+        left: 117px;
+    }
+
+    .condition__side .Right-front-rack {
+        top: 30px;
+        right: 53px;
+    }
+
+    .condition__side .Left-rear-rack {
+        top: 36px;
+        right: 40px;
+    }
+
+    .condition__side .Right-rear-rack {
+        top: 32px;
+        left: 111px;
+    }
+
+    .condition__side .Left-middle-rack {
+        top: 36px;
+        left: 135px;
+    }
+
+    .condition__side .Right-middle-rack {
+        top: 32px;
+        right: 73px;
+    }
+
+    .condition__side .Roof {
+        top: 25px;
+        left: 106px;
+    }
+
+    .condition__side .Mirrors {
+        top: 41px;
+        left: 59px;
+    }
+
+    .condition__side .Front-bumper {
+        top: 83px;
+        left: 39px;
+    }
+
+    .condition__side .Rear-bumper {
+        top: 62px;
+        left: 45px;
+    }
+}
+
+.condition__side-front .Back-cover,
+.condition__side-front .Front-right-door,
+.condition__side-front .Right-rear-door,
+.condition__side-front .Right-front-wing,
+.condition__side-front .Right-rear-wing,
+.condition__side-front .Right-front-rack,
+.condition__side-front .Right-rear-rack,
+.condition__side-front .Right-middle-rack,
+.condition__side-front .Rear-bumper {
+    display: none;
+}
+
+.condition__side-back .Hood,
+.condition__side-back .Front-left-door,
+.condition__side-back .Left-rear-door,
+.condition__side-back .Left-front-wing,
+.condition__side-back .Left-rear-wing,
+.condition__side-back .Left-front-rack,
+.condition__side-back .Left-rear-rack,
+.condition__side-back .Left-middle-rack,
+.condition__side-back .Roof,
+.condition__side-back .Mirrors,
+.condition__side-back .Front-bumper {
+    display: none;
+}
+
+.tires-logo{
+    display: grid;
+    place-items: center;
+}
+ img {
+    max-height: 470px;
+     object-fit: cover;
+}
+.report__slider.slider-for .slide__image{
+    max-height: 470px;
+
+}

@@ -1,0 +1,23 @@
+.tires-chars__text{
+    display: flex;
+    gap: 16px;
+
+}
+.tires-chars__title{
+    margin-bottom: 22px;
+}
+
+.tires-chars__box{
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.tires-line{
+    border-bottom: 1px solid #222;
+    width: 215px;
+    margin : 30px 0;
+}

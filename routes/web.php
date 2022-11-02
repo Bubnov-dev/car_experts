@@ -13,12 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/car', function () {
-    return view('car');
-});
+Route::get('/{id}', [App\Http\Controllers\Controller::class, 'index']);
+Route::get('/car/{id}', [App\Http\Controllers\Controller::class, 'car']);
 Route::post('/newInvoice',  [\App\Http\Controllers\Controller::class, 'newInvoice']);
 Route::post('/newInvoice2',  function (){
     $data = json_decode(file_get_contents('php://input'), true);
@@ -39,4 +35,4 @@ Route::post('/newInvoice2',  function (){
 });
 
 
-Route::get('/pdf', [\App\Http\Controllers\Controller::class, 'getPdf']);
+Route::get('/pdf/{id}', [\App\Http\Controllers\Controller::class, 'getPdf']);

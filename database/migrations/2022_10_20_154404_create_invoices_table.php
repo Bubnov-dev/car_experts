@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->boolean('show')->default(false);
+            $table->string('pseudoId')->unique();
             $table->string('brand')->nullable();
             $table->string('model')->nullable();
             $table->string('clearVIN')->nullable();
@@ -36,27 +38,19 @@ return new class extends Migration
             $table->json('photosVIN')->nullable();
             $table->json('photosDocks')->nullable();
             $table->string('tiresYear')->nullable();
+            $table->string('tiresBrand')->nullable();
             $table->string('tiresStatus')->nullable();
-            $table->json('photos_tires')->nullable();
+            $table->json('photosTires')->nullable();
             $table->json('paintedParts')->nullable();
-            $table->string('badParts')->nullable();
-            $table->json('photosBadParts')->nullable();
-            $table->string('badPartsText')->nullable();
-            $table->json('photosDirtyParts')->nullable();
-            $table->string('textDirtyParts')->nullable();
+            $table->json('badParts')->nullable();
+            $table->json('badPartsOut')->nullable();
+            $table->json('badPartsIn')->nullable();
             $table->string('price')->nullable();
             $table->json('equipment')->nullable();
             $table->string('equipmentStatus')->nullable();
-
-            $table->text('allDefects');
-            $table->text('last');
-
-
-
-
-
-
-
+            $table->json('video')->nullable();
+            $table->text('allDefects')->nullable();
+            $table->text('last')->nullable();
         });
     }
 

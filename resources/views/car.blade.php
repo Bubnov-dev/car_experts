@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
     <!--    <link rel="stylesheet" href="style/style.sass">-->
     {{--
-    <script type="module" crossorigin src="{{public_path('/storage/assets/index.a2dc5af3.js') }}"></script>
+    <script type="module" crossorigin src="{{url('/storage/assets/index.a2dc5af3.js') }}"></script>
     --}}
     <style>
         @font-face {
@@ -297,18 +297,15 @@
 
         .condition__side {
             position: relative;
-            width: 600px;
+            width: 420px;
             display: inline-block;
+            transform: scale(1.3);
+            margin-right: 120px;
         }
 
 
-        .condition__side:first-child img {
-            width: 500px;
-        }
-
-
-        .condition__side:last-child img {
-            width: 600px;
+        .condition__side img {
+            width: 100%;
         }
 
         .condition__icon {
@@ -555,7 +552,6 @@
         }
 
         .components table, .components table img {
-            width: 100%
         }
 
         .components .grid {
@@ -834,38 +830,39 @@
         }
 
 
-        .image-color{
+        .image-color {
             width: 34px;
             height: 34px;
             position: absolute;
         }
 
-        .image-color.bonner{
+        .image-color.bonner {
             left: 150px;
             bottom: 450px;
             width: 34px;
             height: 34px;
         }
-        .image-color.bonner img{
+
+        .image-color.bonner img {
             width: 34px;
             height: 34px;
         }
 
-        .condition__value{
+        .condition__value {
 
             position: absolute;
-            display: none;
             width: 34px;
             height: 34px;
 
         }
+
         .condition__value img {
 
             width: 34px;
             height: 34px;
         }
 
-        .condition__value.bonnet{
+        .condition__value.bonnet {
 
             top: 70px;
             left: 67px;
@@ -874,12 +871,209 @@
         }
 
     </style>
+
+    <style>
+        .report table{
+            width: 100%;
+        }
+
+        img {
+            max-height: 470px;
+            object-fit: cover;
+        }
+
+        .report table img.big {
+            max-height: 760px;
+        }
+        .report table img{
+            height: 100%
+        }
+
+        .tires-chars {
+            margin: 0 15px;
+        }
+
+        .tires-logo {
+            margin-bottom: 100px;
+        }
+
+        .tires-chars__text {
+            display: flex;
+            gap: 16px;
+
+        }
+
+        .tires-chars__title {
+            margin-bottom: 22px;
+        }
+
+        .tires-chars__box {
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            padding: 15px 5px 0;
+            text-align: center;
+            vertical-align: center;
+        }
+
+        .tires-line {
+            border-bottom: 1px solid #222;
+            width: 215px;
+            margin: 30px 0;
+        }
+
+        .tires-photo img {
+            height: 307px;
+        }
+
+        .components__item .item__image {
+
+            object-fit: cover;
+        }
+
+        .condition__value img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        .condition__side .Hood {
+            top: 112px;
+            left: 96px;
+        }
+
+        .condition__side .Back-cover {
+            top: 82px;
+            left: 90px;
+        }
+
+        .condition__side .Front-left-door {
+            top: 130px;
+            left: 245px;
+        }
+
+        .condition__side .Front-right-door {
+            top: 112px;
+            right: 80px;
+        }
+
+        .condition__side .Left-rear-door {
+            top: 118px;
+            left: 298px;
+        }
+
+        .condition__side .Right-rear-door {
+            top: 112px;
+            left: 264px;
+        }
+
+        .condition__side .Left-front-wing {
+            top: 130px;
+            left: 195px;
+        }
+
+        .condition__side .Right-front-wing {
+            top: 107px;
+            right: 35px;
+        }
+
+        .condition__side .Left-rear-wing {
+            top: 94px;
+            right: 44px;
+        }
+
+        .condition__side .Right-rear-wing {
+            top: 93px;
+            left: 185px;
+        }
+
+        .condition__side .Left-front-rack {
+            top: 71px;
+            left: 235px;
+        }
+
+        .condition__side .Right-front-rack {
+            top: 61px;
+            right: 93px;
+        }
+
+        .condition__side .Left-rear-rack {
+            top: 72px;
+            right: 80px;
+        }
+
+        .condition__side .Right-rear-rack {
+            top: 65px;
+            left: 223px;
+        }
+
+        .condition__side .Left-middle-rack {
+            top: 73px;
+            left: 271px;
+        }
+
+        .condition__side .Right-middle-rack {
+            top: 64px;
+            right: 126px;
+        }
+
+        .condition__side .Roof {
+            top: 50px;
+            left: 212px;
+        }
+
+        .condition__side .Mirrors {
+            top: 82px;
+            left: 118px;
+        }
+
+        .condition__side .Front-bumper {
+            top: 166px;
+            left: 78px;
+        }
+
+        .condition__side .Rear-bumper {
+            top: 125px;
+            left: 90px;
+        }
+
+        .condition__side-front .Back-cover,
+        .condition__side-front .Front-right-door,
+        .condition__side-front .Right-rear-door,
+        .condition__side-front .Right-front-wing,
+        .condition__side-front .Right-rear-wing,
+        .condition__side-front .Right-front-rack,
+        .condition__side-front .Right-rear-rack,
+        .condition__side-front .Right-middle-rack,
+        .condition__side-front .Rear-bumper {
+            display: none;
+        }
+
+        .condition__side-back .Hood,
+        .condition__side-back .Front-left-door,
+        .condition__side-back .Left-rear-door,
+        .condition__side-back .Left-front-wing,
+        .condition__side-back .Left-rear-wing,
+        .condition__side-back .Left-front-rack,
+        .condition__side-back .Left-rear-rack,
+        .condition__side-back .Left-middle-rack,
+        .condition__side-back .Roof,
+        .condition__side-back .Mirrors,
+        .condition__side-back .Front-bumper {
+            display: none;
+        }
+
+
+    </style>
 </head>
 <body>
 <header class="header">
     <div class="container header__container">
         <div class="header__logo">
-            <img src="{{ public_path('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+            <img src="{{ url('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
         <div class="header__right">
             <div class="header__qr">
@@ -901,14 +1095,20 @@
         <div class="overview__content">
             <div class="overview__left left">
                 <div class="overview__logo left">
+
                     <img
-                        src="data:image/png;base64,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"
+                        src="{{ url('/assets/brands/'.strtolower(str_replace (' ', '-', $invoice->brand)).'-logo.png')}}"
                         alt="car-logo">
+
+                    {{--                    <img--}}
+                    {{--                        src="{{'/assets/brands/'.strtolower(str_replace (' ', '-', $invoice->brand)).'-logo.png'}}"--}}
+
+                    {{--                        alt="car-logo">--}}
+
                 </div>
                 <div class="overview__name right">
-                    Mercedes-Benz
-                    GL-Класс
-                    500 II (X166)
+                    {{ $invoice->brand }}
+                    {{ $invoice->model }}
                 </div>
             </div>
             <div class="overview__right right">
@@ -930,7 +1130,7 @@
                                     @isset($equipmentItems[$j])
                                         <td class="equipment__item-2">
                                 <span class="">
-                                <img src="{{public_path('/storage/assets/massage.png') }}"
+                                <img src="{{url('/storage/assets/massage.png') }}"
                                      alt="icon">
                                 </span>
                                             <span class="">
@@ -952,7 +1152,7 @@
                     </div>
                     <div class="addition__item">
                         <span class="">
-                            <img src="{{public_path('/storage/assets/massage.png') }}"
+                            <img src="{{url('/storage/assets/massage.png') }}"
                                  alt="icon">
                         </span>
                         <span class="">
@@ -976,7 +1176,8 @@
                         Год выпуска
                     </div>
                     <div class="technical__value">
-                        2012
+                        {{ $invoice->year }}
+
                     </div>
                 </td>
                 <td>
@@ -984,7 +1185,8 @@
                         Пробег
                     </div>
                     <div class="technical__value">
-                        145 688 км
+                        {{ $invoice->mileage }} км
+
                     </div>
                 </td>
                 <td>
@@ -992,7 +1194,7 @@
                         Двигатель
                     </div>
                     <div class="technical__value">
-                        4.7 л / 435 л.с.
+                        {{ $invoice->capacity }} л / {{ $invoice->power }} л.с.
                     </div>
                 </td>
                 <td>
@@ -1000,7 +1202,7 @@
                         Привод
                     </div>
                     <div class="technical__value">
-                        Полный
+                        {{ $invoice->drive }}
                     </div>
                 </td>
                 <td>
@@ -1008,17 +1210,17 @@
                         VIN
                     </div>
                     <div class="technical__value">
-                        1KLBN52TWXM186109
+                        {{ $invoice->VIN }}
                     </div>
                 </td>
             </tr>
-            <tr class="nbb">
+            <tr>
                 <td>
                     <div class="technical__title">
                         Цвет
                     </div>
                     <div class="technical__value">
-                        Мокрый асфальт
+                        {{ $invoice->color }}
                     </div>
                 </td>
                 <td>
@@ -1026,7 +1228,7 @@
                         Коробка
                     </div>
                     <div class="technical__value">
-                        Автоматическая
+                        {{ $invoice->gearbox }}
                     </div>
                 </td>
                 <td>
@@ -1034,7 +1236,7 @@
                         ДТП (база)
                     </div>
                     <div class="technical__value">
-                        Не найдено
+                        {{ $invoice->clearVIN }}
                     </div>
                 </td>
                 <td>
@@ -1042,7 +1244,7 @@
                         Спецификация
                     </div>
                     <div class="technical__value">
-                        В наличии
+                        {{ $invoice->specification }}
                     </div>
                 </td>
                 <td>
@@ -1050,9 +1252,10 @@
                         Гарантия
                     </div>
                     <div class="technical__value">
-                        2 года
+                        {{ $invoice->guarantee != 'Нет' ? $invoice->guaranteeYear. ' лет' : 'Нет' }}
                     </div>
                 </td>
+
             </tr>
         </table>
     </div>
@@ -1062,36 +1265,61 @@
         <div class="h2">Состояние кузова</div>
         <table class="condition__content container">
             <tr>
+                @php
+                    $translate = [
+                        "Капот" => "Hood",
+                        "Задняя крышка" => "Back-cover",
+                        "Дверь левая передняя" => "Front-left-door",
+                        'Дверь правая передняя' => 'Front-right-door',
+                        'Дверь левая задняя' => 'Left-rear-door',
+                        'Дверь правая задняя' =>'Right-rear-door',
+                        'Крыло левое переднее' => 'Left-front-wing',
+                        'Крыло правое переднее' => 'Right-front-wing',
+                        'Крыло левое заднее' => 'Left-rear-wing',
+                        'Крыло правое заднее' => 'Right-rear-wing',
+                        'Стойка левая передняя' => 'Left-front-rack',
+                        'Стойка правая передняя' => 'Right-front-rack',
+                        'Стойка левая задняя' => 'Left-rear-rack',
+                        'Стойка правая задняя' => 'Right-rear-rack',
+                        'Стойка левая средняя' => 'Left-middle-rack',
+                        'Стойка правая средняя' => 'Right-middle-rack',
+                        'Крыша' => 'Roof',
+                        'Зеркала' => 'Mirrors',
+                        'Бампер передний' => 'Front-bumper',
+                        'Бампер задний' => 'Rear-bumper',
+                        ];
+
+                @endphp
 
                 <td width="75%" class=" condition__photos">
 
                     <div class="condition__side condition__side-front">
 
-{{--                        <div class="image-color bonner">--}}
-                            @php
-                                $svg = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 34 34">
-                                    <path d="M4.53334 17L13.6 7.93337L14.7333 7.3667L23.8 16.4334L22.6667 17.5667C18.7 18.5111 10.6533 20.4 10.2 20.4C9.63334 20.4 5.10001 18.7 5.10001 18.1334C5.10001 17.68 4.72223 17.1889 4.53334 17Z" fill="white"/>
-                                    <path d="M15.3 4.2499C15.3 4.02447 15.2104 3.80827 15.051 3.64886C14.8916 3.48946 14.6754 3.3999 14.45 3.3999C14.2246 3.3999 14.0084 3.48946 13.849 3.64886C13.6895 3.80827 13.6 4.02447 13.6 4.2499V6.7999C13.2515 6.9223 12.9251 7.1229 12.648 7.4017L4.0001 16.0462C3.76313 16.283 3.57516 16.5642 3.4469 16.8737C3.31865 17.1832 3.25264 17.5149 3.25264 17.8499C3.25264 18.1849 3.31865 18.5166 3.4469 18.8261C3.57516 19.1356 3.76313 19.4168 4.0001 19.6536L11.3696 27.0231C11.6064 27.2601 11.8876 27.448 12.1971 27.5763C12.5066 27.7045 12.8383 27.7706 13.1733 27.7706C13.5083 27.7706 13.84 27.7045 14.1495 27.5763C14.459 27.448 14.7402 27.2601 14.977 27.0231L23.6215 18.3786C23.8585 18.1418 24.0464 17.8606 24.1747 17.5511C24.3029 17.2416 24.369 16.9099 24.369 16.5749C24.369 16.2399 24.3029 15.9082 24.1747 15.5987C24.0464 15.2892 23.8585 15.008 23.6215 14.7712L16.2537 7.4017C15.9849 7.13217 15.659 6.9265 15.3 6.7999V4.2499ZM22.5573 16.9999H5.4519L13.6 8.8518V11.0499C13.6 11.2753 13.6895 11.4915 13.849 11.6509C14.0084 11.8103 14.2246 11.8999 14.45 11.8999C14.6754 11.8999 14.8916 11.8103 15.051 11.6509C15.2104 11.4915 15.3 11.2753 15.3 11.0499V8.8518L22.423 15.9748C22.555 16.1071 22.6396 16.2793 22.6639 16.4646C22.6882 16.6499 22.6507 16.838 22.5573 16.9999V16.9999ZM27.2272 19.3663C27.1379 19.2128 27.0099 19.0855 26.856 18.9969C26.702 18.9084 26.5276 18.8618 26.35 18.8618C26.1724 18.8618 25.998 18.9084 25.844 18.9969C25.6901 19.0855 25.5621 19.2128 25.4728 19.3663L22.6644 24.1824C21.0035 27.0265 23.0554 30.5999 26.35 30.5999C29.6429 30.5999 31.6965 27.0265 30.0356 24.1824L27.2272 19.3663Z" fill="#D61009"/>
-                                    </svg>
-                                    ';
+                        @foreach($translate as $item)
+                            <div class="condition__value {{ $item}}">
+                                <img src="{{url('/assets/paint-1000.png')}}" alt="">
+                            </div>
+                        @endforeach
 
-                                $html = '<img src="data:image/svg+xml;base64,'.base64_encode($svg).'"  width="34" height="34" />';
-                            @endphp
-{{--                            {!! $html !!}--}}
-{{--                        </div>--}}
-                        <div class="condition__value bonnet thickness1000">
-                            {!! $html !!}
-                        </div>
-                        <img src="{{public_path('/storage/assets/car-front.84b5798f.png') }}" alt="car-front">
+                        {{--                        <div class="image-color bonner">--}}
+
+                        <img src="{{url('/assets/car-front.png') }}" alt="car-front">
                     </div>
                     <div class="condition__side condition__side-back">
-                        <img src="{{public_path('/storage/assets/car-back.6bcf3ba5.png') }}" alt="car-back">
+
+                        @foreach($translate as $item)
+                            <div class="condition__value {{ $item}}">
+                                <img src="{{url('/assets/paint-1000.png')}}" alt="">
+                            </div>
+                        @endforeach
+
+                        <img src="{{url('/assets/car-back.png') }}" alt="car-back">
                     </div>
                 </td>
 
                 <td width="25%" class="condition__measurement ">
                     <span class="measurement__values">
-                        <img src="{{ public_path('/storage/assets/gradient.png') }}" alt="">
+                        <img src="{{ url('/storage/assets/gradient.png') }}" alt="">
                     </span>
                     <div class="measurement__titles">
                         <div class="titles__item">1000 + мкм</div>
@@ -1112,16 +1340,20 @@
             <div class="h2">Рекомендации и выводы</div>
             <div class="recommendation__text">
                 <p>
-                    В целом, конечно, курс на социально-ориентированный национальный проект представляет собой
-                    интересный эксперимент проверки новых принципов формирования материально-технической и кадровой
-                    базы. Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
-                    выполнить важные задания по разработке направлений прогрессивного развития.
+                    {{ $invoice->last }}
                 </p>
                 <p>
-                    И нет сомнений, что тщательные исследования конкурентов представляют собой не что иное, как
-                    квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие
-                    нормы этики и морали.
+                    {{ $invoice->smells ? 'Посторонние запахи отстуствуют' : 'Посторонние запахи присуствуют' }}
                 </p>
+                {{ $invoice->equipmentStatus }}
+
+                @if($invoice->equipmentStatus  == 'Есть замечания')
+                    <p>
+                        {{ $invoice->equipmentStatus ? 'Есть недочеты по работе опций:' : ''}} <br>
+                        {{ $invoice->allDefects }}
+                    </p>
+                @endif
+
             </div>
         </div>
         <div class="recommendation__cost right">
@@ -1129,7 +1361,8 @@
                 src="data:image/png;base64,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"
                 alt="cost">
             <div class="h3">Цена</div>
-            <div class="cost__value accent">$ 300 000</div>
+            <div class="cost__value accent">{{ $invoice->price }}</div>
+
         </div>
     </div>
 </section>
@@ -1165,74 +1398,41 @@
 <header class="header ">
     <div class="container header__container">
         <div class="header__logo">
-            <img src="{{ public_path('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+            <img src="{{ url('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
 
     </div>
 </header>
 <section class="report">
     <div class="container">
-        <table>
-            <tr class="photo__with-comment">
-                <td width="55%" class="">
-                    <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
-                </td>
-                <td class="slide__content">
-                    <div class="slide__title h2">1Комментарий</div>
-                    <div class="slide__desc">
-                        В целом, конечно, курс на социально-ориентированный национальный проект представляет
-                        собой интересный эксперимент проверки новых принципов формирования
-                        материально-технической и кадровой базы. Не следует, однако, забывать, что семантический
-                        разбор внешних противодействий позволяет выполнить важные задания по разработке
-                        направлений прогрессивного развития.
-                    </div>
-                </td>
-            </tr>
-        </table>
+        @php
+            $photos = array_merge($invoice->photosGeneralIn, $invoice->photosGeneralOut);
+        @endphp
         <table>
             <tr class="photo__line">
-                <td>
-                    <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
+                <td width="65%" class="">
+                    <img class="big" src="{{ $photos[0] }}" alt="slide">
                 </td>
-                <td>
-                    <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
-                </td>
-            </tr>
-        </table>
-        <table>
-            <tr class="">
-                <div class="mw960">
-
-                    <div class="slide__title h2">Комментарий long</div>
-                    <div class="slide__desc">
-                        В целом, конечно, курс на социально-ориентированный национальный проект представляет
-                        собой интересный эксперимент проверки новых принципов формирования
-                        материально-технической и кадровой базы. Не следует, однако, забывать, что семантический
-                        разбор внешних противодействий позволяет выполнить важные задания по разработке
-                        направлений прогрессивного развития.
-                    </div>
-                </div>
 
             </tr>
         </table>
         <table>
-            <tr class="photo__with-comment">
-                <td width="55%">
-                    <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="slide">
-                </td>
+            @for($i = 1; $i<count($photos); $i++)
+                <tr class="photo__line">
+                    @isset($photos[$i])
+                        <td>
+                            <img src="{{ $photos[$i++] }}" alt="slide">
+                        </td>
+                    @endif
+                    @isset($photos[$i])
 
-                <td class="slide__content">
-                    <div class="slide__title h2">Комментарий</div>
-                    <div class="slide__desc">
-                        В целом, конечно, курс на социально-ориентированный национальный проект представляет
-                        собой интересный эксперимент проверки новых принципов формирования
-                        материально-технической и кадровой базы. Не следует, однако, забывать, что семантический
-                        разбор внешних противодействий позволяет выполнить важные задания по разработке
-                        направлений прогрессивного развития.
-                    </div>
-                </td>
-            </tr>
+                        <td>
+                            <img src="{{ $photos[$i] }}" alt="slide">
+                        </td>
+                    @endif
 
+                </tr>
+            @endfor
         </table>
     </div>
 </section>
@@ -1241,7 +1441,7 @@
         <tr>
 
             <td class="header__logo">
-                <img src="{{public_path('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
+                <img src="{{url('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
             </td>
             <td class="header__contacts">
                 <span class="link contacts__link" href="">+7 910 966 54 12</span>
@@ -1262,7 +1462,7 @@
 <header class="header ">
     <div class="container header__container">
         <div class="header__logo">
-            <img src="{{ public_path('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+            <img src="{{ url('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
 
     </div>
@@ -1272,19 +1472,25 @@
         <div class="h2">Технические компоненты</div>
         <table>
             <tr>
+                <td class="components__item item">
 
-                <td class="components__item item">
-                    <div class="item__image">
-                        <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
-                    </div>
-                    <div class="item__text h2">VIN</div>
+                @if ( $invoice->photosVIN)
+
+                        <div class="item__image">
+                            <img class="item__image" src="{{ $invoice->photosVIN[0] }}" alt="vin">
+                        </div>
+                        <div class="item__text h2">VIN</div>
+                @endif
                 </td>
-                <td class="components__item item">
-                    <div class="item__image">
-                        <img src="{{public_path('/storage/assets/slide1.6764c463.png') }}" alt="vin">
-                    </div>
-                    <div class="item__text h2">VIN</div>
-                </td>
+
+            @if ( $invoice->photosDocks)
+                    <td class="components__item item">
+                        <div class="item__image">
+                            <img src="{{ $invoice->photosDocks[0] }}" alt="Информация о ТС">
+                        </div>
+                        <div class="item__text h2">Информация о ТС</div>
+                    </td>
+                @endif
             </tr>
         </table>
     </div>
@@ -1292,34 +1498,54 @@
 <section class="components">
     <div class="container">
         <div class="h1">Покрышки</div>
-        <table>
-            <tr>
-                <td class="components__item item">
-                    <div class="item__image">
-                        <img src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
-                    </div>
-                    <div class="item__desc">
-                        Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
-                        выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
-                        конкурентов представляют собой, как квинтэссенцию победы маркетинга над разумом и должны быть
-                        объявлены.
-                    </div>
-                </td>
-                <td class="components__item item">
-                    <div class="item__image">
-                        <img src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
+        <div class="flex">
+            <div class="tires-logo">
+                <img src="{{ url('/assets/tires/'.str_replace (' ', '-', $invoice->tiresBrand).'.png')}}" alt="">
+            </div>
+            <div class="tires-chars">
+                <div class="tires-chars__title">
+                    Состояние
+                </div>
+                <div class="tires-chars__text">
+                    <div class="tires-chars__box">
+
+                        @if($invoice->tiresStatus == 'В норме')
+                            <img src="{{url('/assets/ok.png')}}" alt="">
+                        @else
+                            <img src="{{url('/assets/notOk.png')}}" alt="">
+                        @endif
                     </div>
 
-                    <div class="item__desc">
-                        Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
-                        выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
-                        конкурентов представляют собой, как квинтэссенцию победы маркетинга над разумом и должны быть
-                        объявлены.
-                    </div>
-                </td>
-            </tr>
+                    {{ $invoice->tiresStatus }}
+                </div>
 
-        </table>
+                <div class="tires-line">
+
+                </div>
+
+                <div class="tires-chars__title">
+                    год выпуска
+                </div>
+                <div class="tires-chars__text">
+                    <div class="tires-chars__box">
+
+                        @if($invoice->tiresYear>=2019)
+                            <img src="{{url('/assets/ok.png')}}" alt="">
+                        @else
+                            <img src="{{url('/assets/alert.png')}}" alt="">
+                        @endif
+                    </div>
+                    {{ $invoice->tiresYear }}
+
+                </div>
+            </div>
+
+            @if($invoice->photosTires)
+                <div class="tires-photo">
+                    <img src="{{ $invoice->photosTires[0] }}" alt="">
+                </div>
+            @endif
+        </div>
     </div>
 </section>
 <footer class="footer">
@@ -1327,7 +1553,7 @@
         <tr>
 
             <td class="header__logo">
-                <img src="{{public_path('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
+                <img src="{{url('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
             </td>
             <td class="header__contacts">
                 <span class="link contacts__link" href="">+7 910 966 54 12</span>
@@ -1348,7 +1574,7 @@
 <header class="header ">
     <div class="container header__container">
         <div class="header__logo">
-            <img src="{{ public_path('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+            <img src="{{ url('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
 
     </div>
@@ -1358,7 +1584,7 @@
         <div class="h1">Повреждения</div>
         <div class="grid hidden">
             <div class="components__item item">
-                <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
+                <img class="item__image" src="{{url('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
                 <div class="item__desc">
                     Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
                     выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
@@ -1367,7 +1593,7 @@
                 </div>
             </div>
             <div class="components__item item">
-                <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
+                <img class="item__image" src="{{url('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
                 <div class="item__desc">
                     Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
                     выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
@@ -1376,7 +1602,7 @@
                 </div>
             </div>
             <div class="components__item item">
-                <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
+                <img class="item__image" src="{{url('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
                 <div class="item__desc">
                     Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
                     выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
@@ -1385,7 +1611,7 @@
                 </div>
             </div>
             <div class="components__item item">
-                <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
+                <img class="item__image" src="{{url('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
                 <div class="item__desc">
                     Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
                     выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
@@ -1394,7 +1620,7 @@
                 </div>
             </div>
             <div class="components__item item">
-                <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
+                <img class="item__image" src="{{url('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
                 <div class="item__desc">
                     Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
                     выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
@@ -1403,7 +1629,7 @@
                 </div>
             </div>
             <div class="components__item item">
-                <img class="item__image" src="{{public_path('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
+                <img class="item__image" src="{{url('/storage/assets/vin.bb29fd95.png') }}" alt="vin">
                 <div class="item__desc">
                     Не следует, однако, забывать, что семантический разбор внешних противодействий позволяет
                     выполнить важные задания по разработке направлений. Нет сомнений, что тщательные исследования
@@ -1432,7 +1658,7 @@
         <tr>
 
             <td class="header__logo">
-                <img src="{{public_path('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
+                <img src="{{url('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
             </td>
             <td class="header__contacts">
                 <span class="link contacts__link" href="">+7 910 966 54 12</span>
