@@ -552,6 +552,7 @@
         }
 
         .components table, .components table img {
+            width: 100%
         }
 
         .components .grid {
@@ -873,30 +874,6 @@
     </style>
 
     <style>
-        .report table{
-            width: 100%;
-        }
-
-        img {
-            max-height: 470px;
-            object-fit: cover;
-        }
-
-        .report table img.big {
-            max-height: 760px;
-        }
-        .report table img{
-            height: 100%
-        }
-
-        .tires-chars {
-            margin: 0 15px;
-        }
-
-        .tires-logo {
-            margin-bottom: 100px;
-        }
-
         .tires-chars__text {
             display: flex;
             gap: 16px;
@@ -910,17 +887,10 @@
         .tires-chars__box {
             width: 30px;
             height: 30px;
-            min-width: 30px;
-            min-height: 30px;
-            max-width: 30px;
-            max-height: 30px;
-            display: block;
+            display: grid;
             place-items: center;
             border: 1px solid #000000;
             border-radius: 4px;
-            padding: 15px 5px 0;
-            text-align: center;
-            vertical-align: center;
         }
 
         .tires-line {
@@ -1070,7 +1040,6 @@
             display: none;
         }
 
-
     </style>
 </head>
 <body>
@@ -1123,44 +1092,9 @@
                     </div>
                     <table class="equipment__grid">
                         @php
-                            $equipmentItems = $invoice->equipment;
+                            $equipmentItems = [0,0,0,0];
 
                             $rows = ceil(count($equipmentItems)/3);
-
-
-                            $equipmentIco = [
-                                'Датчик давления в шинах' => '4G',
-                                'Адаптивный свет' => '6E',
-                                'Автоматический дальний свет' => '5E',
-                                'Фаркоп' => '5B',
-                                'Круиз-контроль' => '2H',
-                                'Система помощи при парковке' => '5E',
-                                'Камера' => '1H',
-                                'Камера 360' => '6E',
-                                'Проекционный дисплей' => '1H',
-                                'Открытие багажника без помощи рук' => '6A',
-                                'Электронная приборная панель' => '2H',
-                                'Бесключевой доступ' => '4A',
-                                'Электроскладывание зеркал' => '6E',
-                                'Система «старт-стоп»' => '4F',
-                                'Кожанный салон' => '6G',
-                                'Люк' => '1C',
-                                'Панорамная крыша' => '2G',
-                                'Обогрев рулевого колеса' => '4C',
-                                'Третий ряд сидений' => '6G',
-                                'Электрорегулировка сидений' => '4H',
-                                'Память положения сидений' => '6G',
-                                'Подогрев сидений' => '6G',
-                                'Вентиляция сидений' => '6G',
-                                'Премиум Аудиосистема' => '4D',
-                                'Мультимедиа система для задних пассажиров' => '4D',
-                                'Навигационная система' => '5H',
-                                'Android Auto/CarPlay' => '4D',
-                                'Розетка 220V' => '1A',
-                                'Массаж сидений' => '6G',
-                                'Доводчики дверей' => '4A',
-                                ];
-
                         @endphp
                         @for($i = 0; $i< $rows; $i++)
                             <tr>
@@ -1169,11 +1103,11 @@
                                     @isset($equipmentItems[$j])
                                         <td class="equipment__item-2">
                                 <span class="">
-                                <img src="{{url('/assets/icons/'.$equipmentIco[$equipmentItems[$j]].'.png') }}"
+                                <img src="{{url('/storage/assets/massage.png') }}"
                                      alt="icon">
                                 </span>
                                             <span class="">
-                                    {{$equipmentItems[$j]}}
+                                    Массаж сидений
                                 </span>
                                         </td>
                                     @endif
@@ -1185,21 +1119,21 @@
                     </table>
                 </div>
 
-{{--                <div class="overview__addition right">--}}
-{{--                    <div class="h3">--}}
-{{--                        Дополнительные опции--}}
-{{--                    </div>--}}
-{{--                    <div class="addition__item">--}}
-{{--                        <span class="">--}}
-{{--                            <img src="{{url('/storage/assets/massage.png') }}"--}}
-{{--                                 alt="icon">--}}
-{{--                        </span>--}}
-{{--                        <span class="">--}}
-{{--                            Массаж сидений--}}
-{{--                        </span>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="overview__divider  right"></div>--}}
+                <div class="overview__addition right">
+                    <div class="h3">
+                        Дополнительные опции
+                    </div>
+                    <div class="addition__item">
+                        <span class="">
+                            <img src="{{url('/storage/assets/massage.png') }}"
+                                 alt="icon">
+                        </span>
+                        <span class="">
+                            Массаж сидений
+                        </span>
+                    </div>
+                </div>
+                <div class="overview__divider  right"></div>
 
             </div>
         </div>
@@ -1420,7 +1354,7 @@
             </span>
             <span class="footer__qr right">
                 <img
-                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate('https://laravel.com')) !!} ">
             </span>
             <span class="header__qr-text">
                 <div class="header__qr-text">
@@ -1444,34 +1378,67 @@
 </header>
 <section class="report">
     <div class="container">
-        @php
-            $photos = array_merge($invoice->photosGeneralIn, $invoice->photosGeneralOut);
-        @endphp
+        <table>
+            <tr class="photo__with-comment">
+                <td width="55%" class="">
+                    <img src="{{url('/storage/assets/slide1.6764c463.png') }}" alt="slide">
+                </td>
+                <td class="slide__content">
+                    <div class="slide__title h2">1Комментарий</div>
+                    <div class="slide__desc">
+                        В целом, конечно, курс на социально-ориентированный национальный проект представляет
+                        собой интересный эксперимент проверки новых принципов формирования
+                        материально-технической и кадровой базы. Не следует, однако, забывать, что семантический
+                        разбор внешних противодействий позволяет выполнить важные задания по разработке
+                        направлений прогрессивного развития.
+                    </div>
+                </td>
+            </tr>
+        </table>
         <table>
             <tr class="photo__line">
-                <td width="65%" class="">
-                    <img class="big" src="{{ $photos[0] }}" alt="slide">
+                <td>
+                    <img src="{{url('/storage/assets/slide1.6764c463.png') }}" alt="slide">
                 </td>
+                <td>
+                    <img src="{{url('/storage/assets/slide1.6764c463.png') }}" alt="slide">
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr class="">
+                <div class="mw960">
+
+                    <div class="slide__title h2">Комментарий long</div>
+                    <div class="slide__desc">
+                        В целом, конечно, курс на социально-ориентированный национальный проект представляет
+                        собой интересный эксперимент проверки новых принципов формирования
+                        материально-технической и кадровой базы. Не следует, однако, забывать, что семантический
+                        разбор внешних противодействий позволяет выполнить важные задания по разработке
+                        направлений прогрессивного развития.
+                    </div>
+                </div>
 
             </tr>
         </table>
         <table>
-            @for($i = 1; $i<count($photos); $i++)
-                <tr class="photo__line">
-                    @isset($photos[$i])
-                        <td>
-                            <img src="{{ $photos[$i++] }}" alt="slide">
-                        </td>
-                    @endif
-                    @isset($photos[$i])
+            <tr class="photo__with-comment">
+                <td width="55%">
+                    <img src="{{url('/storage/assets/slide1.6764c463.png') }}" alt="slide">
+                </td>
 
-                        <td>
-                            <img src="{{ $photos[$i] }}" alt="slide">
-                        </td>
-                    @endif
+                <td class="slide__content">
+                    <div class="slide__title h2">Комментарий</div>
+                    <div class="slide__desc">
+                        В целом, конечно, курс на социально-ориентированный национальный проект представляет
+                        собой интересный эксперимент проверки новых принципов формирования
+                        материально-технической и кадровой базы. Не следует, однако, забывать, что семантический
+                        разбор внешних противодействий позволяет выполнить важные задания по разработке
+                        направлений прогрессивного развития.
+                    </div>
+                </td>
+            </tr>
 
-                </tr>
-            @endfor
         </table>
     </div>
 </section>
@@ -1488,7 +1455,7 @@
             </td>
             <td class="footer__qr right">
                 <img
-                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate('https://laravel.com')) !!} ">
             </td>
         </tr>
 
@@ -1511,21 +1478,19 @@
         <div class="h2">Технические компоненты</div>
         <table>
             <tr>
-                <td class="components__item item">
-
                 @if ( $invoice->photosVIN)
 
+                    <td class="components__item item">
                         <div class="item__image">
                             <img class="item__image" src="{{ $invoice->photosVIN[0] }}" alt="vin">
                         </div>
                         <div class="item__text h2">VIN</div>
+                    </td>
                 @endif
-                </td>
-
-            @if ( $invoice->photosDocks)
+                @if ( $invoice->photoDocks)
                     <td class="components__item item">
                         <div class="item__image">
-                            <img src="{{ $invoice->photosDocks[0] }}" alt="Информация о ТС">
+                            <img src="{{ $invoice->photoDocks[0] }}" alt="Информация о ТС">
                         </div>
                         <div class="item__text h2">Информация о ТС</div>
                     </td>
@@ -1600,7 +1565,7 @@
             </td>
             <td class="footer__qr right">
                 <img
-                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate('https://laravel.com')) !!} ">
             </td>
         </tr>
 
@@ -1705,7 +1670,7 @@
             </td>
             <td class="footer__qr right">
                 <img
-                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate('https://laravel.com')) !!} ">
             </td>
         </tr>
 

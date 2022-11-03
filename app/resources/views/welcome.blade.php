@@ -58,51 +58,102 @@
                     Комплектация
                 </div>
                 <div class="equipment__grid">
-                    @php
-                        $equipmentIco = [
-                            'Датчик давления в шинах' => '4G',
-                            'Адаптивный свет' => '6E',
-                            'Автоматический дальний свет' => '5E',
-                            'Фаркоп' => '5B',
-                            'Круиз-контроль' => '2H',
-                            'Система помощи при парковке' => '5E',
-                            'Камера' => '1H',
-                            'Камера 360' => '6E',
-                            'Проекционный дисплей' => '1H',
-                            'Открытие багажника без помощи рук' => '6A',
-                            'Электронная приборная панель' => '2H',
-                            'Бесключевой доступ' => '4A',
-                            'Электроскладывание зеркал' => '6E',
-                            'Система «старт-стоп»' => '4F',
-                            'Кожанный салон' => '6G',
-                            'Люк' => '1C',
-                            'Панорамная крыша' => '2G',
-                            'Обогрев рулевого колеса' => '4C',
-                            'Третий ряд сидений' => '6G',
-                            'Электрорегулировка сидений' => '4H',
-                            'Память положения сидений' => '6G',
-                            'Подогрев сидений' => '6G',
-                            'Вентиляция сидений' => '6G',
-                            'Премиум Аудиосистема' => '4D',
-                            'Мультимедиа система для задних пассажиров' => '4D',
-                            'Навигационная система' => '5H',
-                            'Android Auto/CarPlay' => '4D',
-                            'Розетка 220V' => '1A',
-                            'Массаж сидений' => '6G',
-                            'Доводчики дверей' => '4A',
-                            ];
-
-                    @endphp
-                    @foreach($invoice->equipment as $item)
-                        <div class="equipment__item">
-                            <div class="item__icon">
-                                <img src="/assets/icons/{{ isset($equipmentIco[$item]) ? $equipmentIco[$item] : ''  }}.png" alt="icon">
-                            </div>
-                            <div class="item__name">
-                                {{ $item }}
-                            </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/massage.d98a0345.svg" alt="icon">
                         </div>
-                    @endforeach
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/massage.d98a0345.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/massage.d98a0345.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/massage.d98a0345.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/massage.d98a0345.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/massage.d98a0345.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/massage.d98a0345.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/massage.d98a0345.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/massage.d98a0345.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/Add-icon.b3de98c7.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/Add-icon.b3de98c7.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
+                    <div class="equipment__item">
+                        <div class="item__icon">
+                            <img src="/assets/Add-icon.b3de98c7.svg" alt="icon">
+                        </div>
+                        <div class="item__name">
+                            Массаж сидений
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -229,52 +280,50 @@
         @endphp
         <div class="condition__content">
             <div class="condition__side condition__side-front">
-                @foreach($invoice->paintedParts as $part)
-
-
-                    <div class="condition__value {{ $translate[$part['part']] }}">
-                        @if($part['rating'] == "5")
-                            <img src="/assets/paint-1000.png" alt="">
-                        @elseif($part['rating'] == "4")
-                            <img src="/assets/paint-750.png" alt="">
-                        @elseif($part['rating'] == 3)
-                            <img src="/assets/paint-500.png" alt="">
-                        @elseif($part['rating'] == 2)
-                            <img src="/assets/paint-340.png" alt="">
-                        @elseif($part['rating'] == 1)
-                            <img src="/assets/paint-240.png" alt="">
-                        @endif
-                    </div>
-                @endforeach
-{{--                @foreach($translate as $item)--}}
-{{--                    <div class="condition__value {{ $item}}">--}}
+{{--                @foreach($invoice->paintedParts as $part)--}}
+{{--                    <div class="condition__value {{ $translate[$part['part']] }}">--}}
+{{--                        @if($part['rating'] == 5)--}}
 {{--                            <img src="/assets/paint-1000.png" alt="">--}}
+{{--                        @elseif($part['rating'] == 4)--}}
+{{--                            <img src="/assets/paint-750.png" alt="">--}}
+{{--                        @elseif($part['rating'] == 3)--}}
+{{--                            <img src="/assets/paint-500.png" alt="">--}}
+{{--                        @elseif($part['rating'] == 2)--}}
+{{--                            <img src="/assets/paint-340.png" alt="">--}}
+{{--                        @elseif($part['rating'] == 1)--}}
+{{--                            <img src="/assets/paint-240.png" alt="">--}}
+{{--                        @endif--}}
 {{--                    </div>--}}
 {{--                @endforeach--}}
+                @foreach($translate as $item)
+                    <div class="condition__value {{ $item}}">
+                            <img src="/assets/paint-1000.png" alt="">
+                    </div>
+                @endforeach
 
                 <img src="/assets/car-front.png" alt="car-front">
             </div>
             <div class="condition__side condition__side-back">
-{{--                @foreach($translate as $item)--}}
-{{--                    <div class="condition__value {{ $item}}">--}}
-{{--                        <img src="/assets/paint-1000.png" alt="">--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-                @foreach($invoice->paintedParts as $part)
-                    <div class="condition__value {{ $translate[$part['part']] }}">
-                        @if($part['rating'] == 5)
-                            <img src="/assets/paint-1000.png" alt="">
-                        @elseif($part['rating'] == 4)
-                            <img src="/assets/paint-750.png" alt="">
-                        @elseif($part['rating'] == 3)
-                            <img src="/assets/paint-500.png" alt="">
-                        @elseif($part['rating'] == 2)
-                            <img src="/assets/paint-340.png" alt="">
-                        @elseif($part['rating'] == 1)
-                            <img src="/assets/paint-240.png" alt="">
-                        @endif
+                @foreach($translate as $item)
+                    <div class="condition__value {{ $item}}">
+                        <img src="/assets/paint-1000.png" alt="">
                     </div>
                 @endforeach
+{{--                @foreach($invoice->paintedParts as $part)--}}
+{{--                    <div class="condition__value {{ $translate[$part['part']] }}">--}}
+{{--                        @if($part['rating'] == '1000')--}}
+{{--                            <img src="/assets/paint-1000.png" alt="">--}}
+{{--                        @elseif($part['rating'] == '750')--}}
+{{--                            <img src="/assets/paint-750.png" alt="">--}}
+{{--                        @elseif($part['rating'] == '500')--}}
+{{--                            <img src="/assets/paint-500.png" alt="">--}}
+{{--                        @elseif($part['rating'] == '340')--}}
+{{--                            <img src="/assets/paint-340.png" alt="">--}}
+{{--                        @elseif($part['rating'] == '240')--}}
+{{--                            <img src="/assets/paint-240.png" alt="">--}}
+{{--                        @endif--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
 
                 <img src="/assets/car-back.png" alt="car-back">
             </div>
@@ -371,7 +420,7 @@
         <div class="report__video report__type not-active">
             <div class="video-wrapper">
                 <video muted loop type='video/mp4' controls="">
-                    <source src="{{$invoice->video[0]}}">
+                    <source src="{{$invoice->video}}">
                 </video>
             </div>
         </div>
@@ -391,11 +440,11 @@
                 <div class="item__text h2">VIN</div>
             </div>
             @endif
-            @if ( $invoice->photosDocks)
+            @if ( $invoice->photoDocks)
                 <a class="components__item item" data-fancybox="demo" data-caption="Технические компоненты"
-                   href="{{ $invoice->photosDocks[0] }}">
+                   href="{{ $invoice->photoDocks[0] }}">
                     <div class="item__image">
-                        <img src="{{ $invoice->photosDocks[0] }}" alt="info ts">
+                        <img src="{{ $invoice->photoDocks[0] }}" alt="info ts">
                     </div>
                     <div class="item__text h2">Информация о ТС</div>
                 </a>

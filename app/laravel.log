@@ -1,0 +1,533 @@
+[2022-10-28 09:35:09] local.INFO: array (
+  0 => 
+  array (
+    'q' => 'Выберите марку осматриваемого авто',
+    'a' => 'Aston Martin',
+    't' => 'select',
+  ),
+  1 => 
+  array (
+    'q' => 'Напишите модель',
+    'a' => 'д',
+    't' => 'input',
+  ),
+  2 => 
+  array (
+    'q' => 'Проверьте вин-код автомобиля на наличие ДТП по базам',
+    'a' => 'Имеются',
+    't' => 'emoji',
+  ),
+  3 => 
+  array (
+    'q' => 'Загрузите скриншот сайта с имеющимися ДТП',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/427bb8ee-a523-40fc-a48f-ca6f93beca8b.png?sign=e94126419dd3d6f43f77104264394395',
+      1 => 'https://files.marquiz.ru/download/d36dade0-b852-4ea9-8c45-572368a2b2d3.png?sign=d9e710229e2676441b6c5395c9010cf5',
+    ),
+    't' => 'file',
+  ),
+  4 => 
+  array (
+    'q' => 'Укажите год выпуска',
+    'a' => '2017',
+    't' => 'slider',
+  ),
+  5 => 
+  array (
+    'q' => 'Уточните у продавца точный объем двигателя и л.с. Сперва укажите объем ⬇',
+    'a' => '9',
+    't' => 'input',
+  ),
+  6 => 
+  array (
+    'q' => 'Лошадиные силы',
+    'a' => '89',
+    't' => 'input',
+  ),
+  7 => 
+  array (
+    'q' => 'Какая КПП у авто?',
+    'a' => 'Механика',
+    't' => 'variants',
+  ),
+  8 => 
+  array (
+    'q' => 'Какой цвет кузова авто?',
+    'a' => '99',
+    't' => 'input',
+  ),
+  9 => 
+  array (
+    'q' => 'Укажите VIN код',
+    'a' => '846532',
+    't' => 'input',
+  ),
+  10 => 
+  array (
+    'q' => 'Укажите точный пробег',
+    'a' => '95',
+    't' => 'input',
+  ),
+  11 => 
+  array (
+    'q' => 'Какой привод у авто?',
+    'a' => 'Задний',
+    't' => 'images',
+  ),
+  12 => 
+  array (
+    'q' => 'Укажите спецификацию',
+    'a' => 'American',
+    't' => 'emoji',
+  ),
+  13 => 
+  array (
+    'q' => 'Спросите у продавца - есть ли гарантия?',
+    'a' => 'Да',
+    't' => 'emoji',
+  ),
+  14 => 
+  array (
+    'q' => 'До какого года или км?',
+    'a' => '852',
+    't' => 'input',
+  ),
+  15 => 
+  array (
+    'q' => 'Обязательно сделайте качественные и четкие фото с хорошим освещением',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/2d3a9eb7-ec61-4ea3-bb71-2b5507fc55cb.png?sign=c78e7d1d9ea964c6fde27a4101c18a0e',
+    ),
+    't' => 'file',
+  ),
+  16 => 
+  array (
+    'q' => 'Теперь сделайте фото общих планов салона',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/236c9324-7918-41c0-8d98-c808b1b56761.png?sign=d86721ab962a205ee2caa798109de347',
+    ),
+    't' => 'file',
+  ),
+  17 => 
+  array (
+    'q' => 'Присутствуют ли в салоне неприятные запахи?',
+    'a' => 'Да',
+    't' => 'emoji',
+  ),
+  18 => 
+  array (
+    'q' => 'Сфотографируйте шильдик с вин-номером и информацией об авто в проёме водительской двери, либо просто снизу лобового стекла',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/1628ab09-8545-4b3d-ad5d-51c0bd732d07.png?sign=1833d533d10e678e6f2ef69a90ea061a',
+    ),
+    't' => 'file',
+  ),
+  19 => 
+  array (
+    'q' => 'Сфотографируйте мулькию(птс авто) и какие-либо документы на авто',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/8dd14953-610a-4515-981a-8752471e6dd6.png?sign=12b94c42683b4f4c728f4e64e3e84e03',
+    ),
+    't' => 'file',
+  ),
+  20 => 
+  array (
+    'q' => 'Проверьте и укажите год резины',
+    'a' => '2019',
+    't' => 'slider',
+  ),
+  21 => 
+  array (
+    'q' => 'Укажите производителя шин',
+    'a' => 'Gislaved',
+    't' => 'variants',
+  ),
+  22 => 
+  array (
+    'q' => 'Какое состояние резины',
+    'a' => 'Не в норме',
+    't' => 'emoji',
+  ),
+  23 => 
+  array (
+    'q' => 'Сфотографируйте износ резины',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/e3b7dbd8-c333-4eb8-9bac-2cae4dc3dcd5.png?sign=d126b12f5cb7814339f64b34a231e6f4',
+    ),
+    't' => 'file',
+  ),
+  24 => 
+  array (
+    'q' => '1️⃣На какой из деталей распознан вторичный окрас?',
+    'a' => 'Все чисто 🙌',
+    't' => 'images',
+  ),
+  25 => 
+  array (
+    'q' => 'Отсмотрите соединения дверей и капота на предмет скручивания и наличия ржавчины',
+    'a' => 'Не все идеально',
+    't' => 'emoji',
+  ),
+  26 => 
+  array (
+    'q' => 'Сфотографируйте эти места',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/aa43762d-3534-4c6d-9cc8-cec6f3b72e08.png?sign=25892848dab263ce68351a2f19bacf4c',
+    ),
+    't' => 'file',
+  ),
+  27 => 
+  array (
+    'q' => 'Дайте описание данному фото соединений',
+    'a' => 'цукнх',
+    't' => 'input',
+  ),
+  28 => 
+  array (
+    'q' => 'Есть еще?',
+    'a' => 'Да',
+    't' => 'variants',
+  ),
+  29 => 
+  array (
+    'q' => 'Сфотографируйте',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/a2a6adc1-fe0c-4be6-906c-f3cbf9cde2cf.png?sign=67370f9b6f3a9875022a35a7c7faae63',
+    ),
+    't' => 'file',
+  ),
+  30 => 
+  array (
+    'q' => 'Дайте описание загруженному фото',
+    'a' => '2 угшщлдторлм',
+    't' => 'input',
+  ),
+  31 => 
+  array (
+    'q' => 'Есть еще?',
+    'a' => 'Нет',
+    't' => 'variants',
+  ),
+  32 => 
+  array (
+    'q' => 'Полностью по кругу осмотрите кузов автомобиля и его диски',
+    'a' => 'Найдены повреждения',
+    't' => 'emoji',
+  ),
+  33 => 
+  array (
+    'q' => '1️⃣Сфотографируйте повреждение любого типа на кузове',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/d75785c3-ce1c-468b-b45c-eab36566dcc7.png?sign=f0320de74a29e8272d4a69299e61a547',
+    ),
+    't' => 'file',
+  ),
+  34 => 
+  array (
+    'q' => '1️⃣Дайте описание загруженному фото',
+    'a' => '1.1 апгошлщд',
+    't' => 'input',
+  ),
+  35 => 
+  array (
+    'q' => '2️⃣Сфотографируйте повреждение любого типа на кузове',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/fcc62ee1-da70-47bd-b843-96e88b9aa0bc.png?sign=91fab16d7132980bf648232c99b9985f',
+    ),
+    't' => 'file',
+  ),
+  36 => 
+  array (
+    'q' => '2️⃣Дайте описание загруженному фото',
+    'a' => '1.2 выфафывфы',
+    't' => 'input',
+  ),
+  37 => 
+  array (
+    'q' => 'Есть еще?',
+    'a' => 'Нет',
+    't' => 'variants',
+  ),
+  38 => 
+  array (
+    'q' => 'Теперь осмотрите салон на предмет повреждений, потертостей и испачканных элементов',
+    'a' => 'Есть минусы',
+    't' => 'emoji',
+  ),
+  39 => 
+  array (
+    'q' => 'Сфотографируйте повреждение или испачканные элементы',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/decff866-6ef2-4936-b3c8-73888c81483e.png?sign=73f02d44a827cb33b25d252c56315660',
+    ),
+    't' => 'file',
+  ),
+  40 => 
+  array (
+    'q' => 'Дайте описание загруженному фото салона',
+    'a' => 'ыфв',
+    't' => 'input',
+  ),
+  41 => 
+  array (
+    'q' => 'Есть еще?',
+    'a' => 'Да',
+    't' => 'variants',
+  ),
+  42 => 
+  array (
+    'q' => 'Сфотографируйте повреждение или испачканные элементы',
+    'a' => 
+    array (
+      0 => 'https://files.marquiz.ru/download/cc9bf8bf-e994-4846-b62e-c22c36f18ab5.png?sign=071e79c547e98712f9ef1ec6ad70827d',
+    ),
+    't' => 'file',
+  ),
+  43 => 
+  array (
+    'q' => 'Дайте описание загруженному фото салона',
+    'a' => '3.ввывы',
+    't' => 'input',
+  ),
+  44 => 
+  array (
+    'q' => 'Есть еще?',
+    'a' => 'Нет',
+    't' => 'variants',
+  ),
+  45 => 
+  array (
+    'q' => 'Укажите последнюю цену авто',
+    'a' => '12333',
+    't' => 'input',
+  ),
+  46 => 
+  array (
+    'q' => 'Укажите комплектацию авто',
+    'a' => 
+    array (
+      0 => 'Обогрев сидений',
+      1 => 'Кожаный салон',
+      2 => 'Третий ряд сидений',
+    ),
+    't' => 'variants',
+  ),
+  47 => 
+  array (
+    'q' => 'Укажите комплектацию авто',
+    'a' => 
+    array (
+      0 => 'Бесключевой доступ',
+    ),
+    't' => 'variants',
+  ),
+  48 => 
+  array (
+    'q' => 'Укажите комплектацию авто',
+    'a' => 
+    array (
+      0 => 'Автоматическая парковка',
+    ),
+    't' => 'variants',
+  ),
+  49 => 
+  array (
+    'q' => 'Проверьте как работают все функции авто',
+    'a' => 'Есть замечания',
+    't' => 'emoji',
+  ),
+  50 => 
+  array (
+    'q' => 'Напишите про все недочеты',
+    'a' => 'ролд',
+    't' => 'input',
+  ),
+  51 => 
+  array (
+    'q' => 'Последний шаг!',
+    'a' => 'олдждло',
+    't' => 'input',
+  ),
+)  
+[2022-10-28 09:35:09] local.INFO: $badSearch2 0  
+[2022-10-28 09:35:09] local.INFO: $badSearch 0  
+[2022-10-28 09:35:09] local.INFO: 33  
+[2022-10-28 09:35:09] local.INFO: array (
+  'q' => '1️⃣Сфотографируйте повреждение любого типа на кузове',
+  'a' => 
+  array (
+    0 => 'https://files.marquiz.ru/download/d75785c3-ce1c-468b-b45c-eab36566dcc7.png?sign=f0320de74a29e8272d4a69299e61a547',
+  ),
+  't' => 'file',
+)  
+[2022-10-28 09:35:09] local.INFO: 35  
+[2022-10-28 09:35:09] local.INFO: array (
+  'q' => '2️⃣Сфотографируйте повреждение любого типа на кузове',
+  'a' => 
+  array (
+    0 => 'https://files.marquiz.ru/download/fcc62ee1-da70-47bd-b843-96e88b9aa0bc.png?sign=91fab16d7132980bf648232c99b9985f',
+  ),
+  't' => 'file',
+)  
+[2022-10-28 09:35:09] local.INFO: $badSearchDirty 0  
+[2022-10-28 09:35:09] local.INFO: array (
+  'brand' => 'Aston Martin',
+  'model' => 'д',
+  'clearVIN' => 'Имеются',
+  'year' => '2017',
+  'capacity' => '9',
+  'power' => '89',
+  'gearbox' => 'Механика',
+  'color' => '99',
+  'VIN' => '846532',
+  'mileage' => '95',
+  'drive' => 'Задний',
+  'specification' => 'American',
+  'guarantee' => 'Да',
+  'guaranteeYear' => NULL,
+  'smells' => 'Да',
+  'tiresYear' => '2019',
+  'tiresStatus' => 'Не в норме',
+  'tiresBrand' => 'Gislaved',
+  'photosTires' => 
+  array (
+    0 => 'https://files.marquiz.ru/download/e3b7dbd8-c333-4eb8-9bac-2cae4dc3dcd5.png?sign=d126b12f5cb7814339f64b34a231e6f4',
+  ),
+  'photosVIN' => 
+  array (
+    0 => 'https://files.marquiz.ru/download/1628ab09-8545-4b3d-ad5d-51c0bd732d07.png?sign=1833d533d10e678e6f2ef69a90ea061a',
+  ),
+  'photosDocks' => 
+  array (
+    0 => 'https://files.marquiz.ru/download/8dd14953-610a-4515-981a-8752471e6dd6.png?sign=12b94c42683b4f4c728f4e64e3e84e03',
+  ),
+  'photosGeneralOut' => 
+  array (
+    0 => 'https://files.marquiz.ru/download/2d3a9eb7-ec61-4ea3-bb71-2b5507fc55cb.png?sign=c78e7d1d9ea964c6fde27a4101c18a0e',
+  ),
+  'photosGeneralIn' => 
+  array (
+    0 => 'https://files.marquiz.ru/download/236c9324-7918-41c0-8d98-c808b1b56761.png?sign=d86721ab962a205ee2caa798109de347',
+  ),
+  'price' => '12333',
+  'equipment' => 
+  array (
+    0 => 'Обогрев сидений',
+    1 => 'Кожаный салон',
+    2 => 'Третий ряд сидений',
+  ),
+  'equipmentStatus' => 'Есть замечания',
+  'allDefects' => 'ролд',
+  'last' => 'олдждло',
+  'paintedParts' => 
+  array (
+  ),
+  'badParts' => 
+  array (
+    0 => 
+    array (
+      'photo' => 
+      array (
+        0 => 'https://files.marquiz.ru/download/d75785c3-ce1c-468b-b45c-eab36566dcc7.png?sign=f0320de74a29e8272d4a69299e61a547',
+      ),
+      'text' => '1.1 апгошлщд',
+    ),
+    1 => 
+    array (
+      'photo' => 
+      array (
+        0 => 'https://files.marquiz.ru/download/fcc62ee1-da70-47bd-b843-96e88b9aa0bc.png?sign=91fab16d7132980bf648232c99b9985f',
+      ),
+      'text' => '1.2 выфафывфы',
+    ),
+  ),
+  'badPartsOut' => 
+  array (
+    0 => 
+    array (
+      'photo' => 
+      array (
+        0 => 'https://files.marquiz.ru/download/aa43762d-3534-4c6d-9cc8-cec6f3b72e08.png?sign=25892848dab263ce68351a2f19bacf4c',
+      ),
+      'text' => 'цукнх',
+    ),
+  ),
+  'badPartsIn' => 
+  array (
+  ),
+)  
+[2022-10-28 09:35:09] local.ERROR: Array to string conversion {"exception":"[object] (ErrorException(code: 0): Array to string conversion at /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Support/Str.php:832)
+[stacktrace]
+#0 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(259): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Support/Str.php(832): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#2 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/QueryException.php(57): Illuminate\\Support\\Str::replaceArray()
+#3 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/QueryException.php(40): Illuminate\\Database\\QueryException->formatMessage()
+#4 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Connection.php(760): Illuminate\\Database\\QueryException->__construct()
+#5 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Connection.php(719): Illuminate\\Database\\Connection->runQueryCallback()
+#6 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Connection.php(545): Illuminate\\Database\\Connection->run()
+#7 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Connection.php(497): Illuminate\\Database\\Connection->statement()
+#8 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\\Database\\Connection->insert()
+#9 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3252): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId()
+#10 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1858): Illuminate\\Database\\Query\\Builder->insertGetId()
+#11 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1280): Illuminate\\Database\\Eloquent\\Builder->__call()
+#12 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1245): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#13 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1086): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#14 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(975): Illuminate\\Database\\Eloquent\\Model->save()
+#15 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Support/helpers.php(306): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}()
+#16 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(976): tap()
+#17 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create()
+#18 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2275): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#19 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2287): Illuminate\\Database\\Eloquent\\Model->__call()
+#20 /var/www/bubnovff/data/www/trackback.ffox.site/app/Http/Controllers/InvoiceController.php(119): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#21 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\InvoiceController->create()
+#22 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#23 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Route.php(260): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#24 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#25 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Router.php(725): Illuminate\\Routing\\Route->run()
+#26 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#27 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#29 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(102): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#31 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(54): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#32 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#33 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Router.php(726): Illuminate\\Pipeline\\Pipeline->then()
+#35 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Router.php(703): Illuminate\\Routing\\Router->runRouteWithinStack()
+#36 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\\Routing\\Router->runRoute()
+#37 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Routing/Router.php(656): Illuminate\\Routing\\Router->dispatchToRoute()
+#38 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
+#39 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#40 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#42 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#43 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#45 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#46 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#47 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#48 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#49 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#50 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#51 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#52 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#53 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#54 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/fruitcake/laravel-cors/src/HandleCors.php(52): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#55 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Fruitcake\\Cors\\HandleCors->handle()
+#56 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#57 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
+#58 /var/www/bubnovff/data/www/trackback.ffox.site/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#59 /var/www/bubnovff/data/www/trackback.ffox.site/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#60 {main}
+"} 
