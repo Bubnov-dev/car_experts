@@ -133,7 +133,7 @@ class InvoiceController extends Controller
             return ($a1 >= $b1) ? -1 : 1;
         });
         foreach ($fields['equipment'] as $item){
-            Log::info($item . ' - ' . array_search($item, $this->sortEquipment()));
+            Log::info($item . ' - ' . array_search($item, $this->sortEquipment));
         }
         $res = Invoice::create($fields);
 

@@ -44,9 +44,4 @@ class Controller extends BaseController
         return $pdf->download('invoice.pdf');
     }
 
-    public function newInvoice(Request $request) {
-        Log::info($request->all());
-
-        return response()->json('cool');
-    }
 }
