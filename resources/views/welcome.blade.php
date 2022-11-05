@@ -34,7 +34,8 @@
                 Обновлено
             </div>
             <div class="date__date accent">
-                25 авг 2022
+
+                {{ explode(' ', $invoice->updated_at ?? $invoice->created_at)[0] }}
             </div>
         </div>
     </div>
@@ -96,7 +97,7 @@
                     @foreach($invoice->equipment as $item)
                         <div class="equipment__item">
                             <div class="item__icon">
-                                <img src="/assets/icons/{{ isset($equipmentIco[$item]) ? $equipmentIco[$item] : ''  }}.png" alt="icon">
+                                <img src="/assets/icons/{{ isset($equipmentIco[$item]) ? $equipmentIco[$item] : 'no-icon'  }}.png" alt="icon">
                             </div>
                             <div class="item__name">
                                 {{ $item }}
@@ -192,7 +193,7 @@
                         Гарантия
                     </div>
                     <div class="technical__value">
-                        {{ $invoice->guarantee != 'Нет' ? $invoice->guaranteeYear. ' лет' : 'Нет' }}
+                        {{ $invoice->guarantee != 'Нет' ? $invoice->guaranteeYear : 'Нет' }}
                     </div>
                 </td>
             </tr>
@@ -234,15 +235,15 @@
 
                     <div class="condition__value {{ $translate[$part['part']] }}">
                         @if($part['rating'] == "5")
-                            <img src="/assets/paint-1000.png" alt="">
+                            <img src="/assets/1000.png" alt="">
                         @elseif($part['rating'] == "4")
-                            <img src="/assets/paint-750.png" alt="">
+                            <img src="/assets/800.png" alt="">
                         @elseif($part['rating'] == 3)
-                            <img src="/assets/paint-500.png" alt="">
+                            <img src="/assets/500.png" alt="">
                         @elseif($part['rating'] == 2)
-                            <img src="/assets/paint-340.png" alt="">
+                            <img src="/assets/300.png" alt="">
                         @elseif($part['rating'] == 1)
-                            <img src="/assets/paint-240.png" alt="">
+                            <img src="/assets/100.png" alt="">
                         @endif
                     </div>
                 @endforeach
@@ -262,16 +263,16 @@
 {{--                @endforeach--}}
                 @foreach($invoice->paintedParts as $part)
                     <div class="condition__value {{ $translate[$part['part']] }}">
-                        @if($part['rating'] == 5)
-                            <img src="/assets/paint-1000.png" alt="">
-                        @elseif($part['rating'] == 4)
-                            <img src="/assets/paint-750.png" alt="">
+                        @if($part['rating'] == "5")
+                            <img src="/assets/1000.png" alt="">
+                        @elseif($part['rating'] == "4")
+                            <img src="/assets/800.png" alt="">
                         @elseif($part['rating'] == 3)
-                            <img src="/assets/paint-500.png" alt="">
+                            <img src="/assets/500.png" alt="">
                         @elseif($part['rating'] == 2)
-                            <img src="/assets/paint-340.png" alt="">
+                            <img src="/assets/300.png" alt="">
                         @elseif($part['rating'] == 1)
-                            <img src="/assets/paint-240.png" alt="">
+                            <img src="/assets/100.png" alt="">
                         @endif
                     </div>
                 @endforeach
@@ -409,7 +410,7 @@
         <div class="flex">
             <div class="tires-logo">
                 <img src="/assets/tires/{{(str_replace (' ', '-', $invoice->tiresBrand)).'.png'}}"
-                                         alt="">
+                                         alt="{{$invoice->tiresBrand}}">
             </div>
             <div class="tires-chars">
                 <div class="tires-chars__title">
@@ -507,7 +508,7 @@
                 Дата диагностики
             </div>
             <div class="date__date accent">
-                {{ $invoice->created_at }}
+                {{ explode(' ', $invoice->created_at)[0] }}
             </div>
         </div>
         @if($invoice->updated_at)
@@ -516,12 +517,12 @@
                     Обновлено
                 </div>
                 <div class="date__date accent">
-                    {{ $invoice->updated_at }}
+                    {{ explode(' ', $invoice->updated_at )[0] }}
 
                 </div>
             </div>
         @endif
-        <a class="btn footer__btn" href="/pdf/{{$invoice->id}}">
+        <a class="btn footer__btn" href="/pdf/{{$invoice->id}}" targer="_about">
             Скачать PDF-версию
         </a>
     </div>

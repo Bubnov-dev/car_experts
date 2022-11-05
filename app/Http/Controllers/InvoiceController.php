@@ -13,7 +13,6 @@ class InvoiceController extends Controller
 
     public function create(Request $request) {
         $answers = $request->input('answers');
-        Log::info($answers);
 
         $fields['brand'] = $this->getByAns('Выберите марку осматриваемого авто', $answers);
         $fields['model'] = $this->getByAns('Напишите модель', $answers);
@@ -30,7 +29,7 @@ class InvoiceController extends Controller
         $fields['drive'] = $this->getByAns('Какой привод у авто?', $answers);
         $fields['specification'] = $this->getByAns('Укажите спецификацию', $answers);
         $fields['guarantee'] = $this->getByAns('Спросите у продавца - есть ли гарантия?', $answers);
-        $fields['guaranteeYear'] = $this->getByAns('До какого месяца и года?', $answers);
+        $fields['guaranteeYear'] = $this->getByAns('До какого года или км?', $answers);
         $fields['smells'] = $this->getByAns('Присутствуют ли в салоне неприятные запахи?',
                                             $answers);
         $fields['tiresYear'] = $this->getByAns('Проверьте и укажите год резины', $answers);
@@ -79,12 +78,9 @@ class InvoiceController extends Controller
             if ($badSearch == 1 && str_contains($answers[$i]['q'],
                                                 'Сфотографируйте повреждение любого типа на кузове')) {
                 $badSearch = 0;
-                Log::info('$badSearch ' . $badSearch);
 
                 while ($i < count($answers) && str_contains($answers[$i]['q'],
                                                             'Сфотографируйте повреждение любого типа на кузове')) {
-                    Log::info($i);
-                    Log::info($answers[$i]);
                     $fields['badParts'][] = ['photo' => $answers[$i++]['a'], 'text' => $answers[$i++]['a'],];
                 }
                 $i--;
@@ -93,7 +89,6 @@ class InvoiceController extends Controller
             //Отсмотрите соединения дверей и капота на предмет скручивания и наличия ржавчины
             if ($badSearch2 == 1 && str_contains($answers[$i]['q'], 'Сфотографируйте эти места')) {
                 $badSearch2 = 0;
-                Log::info('$badSearch2 ' . $badSearch2);
 
                 while ($i < count($answers) && str_contains($answers[$i]['q'],
                                                             'Сфотографируйте эти места')) {
@@ -109,7 +104,6 @@ class InvoiceController extends Controller
             if ($badSearchDirty && str_contains($answers[$i]['q'],
                                                 'Сфотографируйте повреждение или испачканные элементы')) {
                 $badSearchDirty = 0;
-                Log::info('$badSearchDirty ' . $badSearchDirty);
 
                 while ($i < count($answers) && str_contains($answers[$i]['q'],
                                                             'Сфотографируйте повреждение любого типа на кузове')) {
@@ -127,18 +121,20 @@ class InvoiceController extends Controller
         $fields['pseudoId'] = Hash::make($fields['brand'] . $fields['model'] . date_format($date,
                                                                                            'Y-m-d H:i:s'));
 
-//
-//        // sorting equipment
-//        uasort($fields,  function ($a, $b) {
-//
-//            if ($a == $b) {
-//                return 0;
-//            }
-//            return (array_search($a, $this->sortEquipment) < array_search($b,
-//                                                                          $this->sortEquipment)) ? -1 : 1;
-//        });
 
-        Log::info($fields);
+        // sorting equipment
+        usort($fields['equipment'],  function ($a, $b) {
+
+            if ($a == $b) {
+                return 0;
+            }
+            $a1 = array_search($a, $this->sortEquipment) ?? 99999999;
+            $b1 = array_search($b, $this->sortEquipment) ?? 99999999;
+            return ($a1 >= $b1) ? -1 : 1;
+        });
+        foreach ($fields['equipment'] as $item){
+            Log::info($item . ' - ' . array_search($item, $this->sortEquipment()));
+        }
         $res = Invoice::create($fields);
 
         Log::info($res);

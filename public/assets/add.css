@@ -289,3 +289,20 @@
     max-height: 470px;
 
 }
+
+.tires-logo{
+    width: 215px;
+    height: 215px;
+    border-radius: 6px;
+    border: 1px solid #222;
+    place-items: center;
+    padding: 23px;
+}
+
+.recommendation > .flex{
+    justify-content: space-between;
+}
+
+.header__logo{
+    max-height: 87px;
+}

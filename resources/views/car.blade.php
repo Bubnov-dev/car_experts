@@ -200,7 +200,7 @@
         }
 
         .overview__equipment {
-            width: 800px;
+            /*width: 800px;*/
             margin-left: 50px;
         }
 
@@ -219,7 +219,8 @@
             /*grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));*/
             /*row-gap: 25px;*/
             font-size: 16px;
-            color: #444
+            color: #444;
+            width: 1000px
         }
 
         .overview__equipment tr {
@@ -666,6 +667,11 @@
     </style>
 
     <style>
+
+        .header__logo{
+            max-height: 87px;
+        }
+
         .flex > * {
             display: inline-block;
         }
@@ -908,6 +914,7 @@
         }
 
         .tires-chars__box {
+            margin-top: 25px;
             width: 30px;
             height: 30px;
             min-width: 30px;
@@ -1071,18 +1078,27 @@
         }
 
 
+
+        .tires-logo{
+            width: 215px;
+            height: 215px;
+            border-radius: 6px;
+            border: 1px solid #222;
+            place-items: center;
+            padding: 23px;
+        }
     </style>
 </head>
 <body>
 <header class="header">
     <div class="container header__container">
         <div class="header__logo">
-            <img src="{{ url('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+            <img src="{{ url('/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
         <div class="header__right">
             <div class="header__qr">
                 <img
-                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(140)->generate('https://laravel.com')) !!} ">
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(140)->generate('https://www.car-experts.ae/')) !!} ">
             </div>
 
         </div>
@@ -1168,13 +1184,13 @@
                                 @for($j = 3*$i; $j < 3*($i+1); $j++)
                                     @isset($equipmentItems[$j])
                                         <td class="equipment__item-2">
-                                <span class="">
-                                <img src="{{url('/assets/icons/'.$equipmentIco[$equipmentItems[$j]].'.png') }}"
-                                     alt="icon">
-                                </span>
                                             <span class="">
-                                    {{$equipmentItems[$j]}}
-                                </span>
+                                                @php $icon = isset($equipmentIco[$equipmentItems[$j]]) ? $equipmentIco[$equipmentItems[$j]] : 'no-icon'  @endphp
+                                              <img src="{{url('/assets/icons/'.$icon.'.png')}}"/>
+                                            </span>
+                                            <span class="">
+                                                {{$equipmentItems[$j]}}
+                                            </span>
                                         </td>
                                     @endif
                                 @endfor
@@ -1291,7 +1307,7 @@
                         Гарантия
                     </div>
                     <div class="technical__value">
-                        {{ $invoice->guarantee != 'Нет' ? $invoice->guaranteeYear. ' лет' : 'Нет' }}
+                        {{ $invoice->guarantee != 'Нет' ? $invoice->guaranteeYear : 'Нет' }}
                     </div>
                 </td>
 
@@ -1333,22 +1349,39 @@
                 <td width="75%" class=" condition__photos">
 
                     <div class="condition__side condition__side-front">
-
-                        @foreach($translate as $item)
-                            <div class="condition__value {{ $item}}">
-                                <img src="{{url('/assets/paint-1000.png')}}" alt="">
+                        @foreach($invoice->paintedParts as $part)
+                            <div class="condition__value {{ $translate[$part['part']] }}">
+                                @if($part['rating'] == "5")
+                                    <img src="{{url('/assets/1000.png')}}" alt="">
+                                @elseif($part['rating'] == "4")
+                                    <img src="{{url('/assets/800.png') }}" alt="">
+                                @elseif($part['rating'] == 3)
+                                    <img src="{{url('/assets/500.png') }}" alt="">
+                                @elseif($part['rating'] == 2)
+                                    <img src="{{url('/assets/300.png') }}" alt="">
+                                @elseif($part['rating'] == 1)
+                                    <img src="{{url('/assets/100.png') }}" alt="">
+                                @endif
                             </div>
                         @endforeach
-
                         {{--                        <div class="image-color bonner">--}}
 
                         <img src="{{url('/assets/car-front.png') }}" alt="car-front">
                     </div>
                     <div class="condition__side condition__side-back">
-
-                        @foreach($translate as $item)
-                            <div class="condition__value {{ $item}}">
-                                <img src="{{url('/assets/paint-1000.png')}}" alt="">
+                        @foreach($invoice->paintedParts as $part)
+                            <div class="condition__value {{ $translate[$part['part']] }}">
+                                @if($part['rating'] == "5")
+                                    <img src="{{url('/assets/1000.png')}}" alt="">
+                                @elseif($part['rating'] == "4")
+                                    <img src="{{url('/assets/800.png') }}" alt="">
+                                @elseif($part['rating'] == 3)
+                                    <img src="{{url('/assets/500.png') }}" alt="">
+                                @elseif($part['rating'] == 2)
+                                    <img src="{{url('/assets/300.png') }}" alt="">
+                                @elseif($part['rating'] == 1)
+                                    <img src="{{url('/assets/100.png') }}" alt="">
+                                @endif
                             </div>
                         @endforeach
 
@@ -1414,7 +1447,7 @@
                         Дата
                     </div>
                     <div class="date__title">
-                        25 августа 2022
+                        {{ explode(' ', $invoice->updated_at ?? $invoice->created_at)[0] }}
                     </div>
                 </div>
             </span>
@@ -1437,7 +1470,7 @@
 <header class="header ">
     <div class="container header__container">
         <div class="header__logo">
-            <img src="{{ url('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+            <img src="{{ url('/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
 
     </div>
@@ -1501,7 +1534,7 @@
 <header class="header ">
     <div class="container header__container">
         <div class="header__logo">
-            <img src="{{ url('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+            <img src="{{ url('/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
 
     </div>
@@ -1539,7 +1572,25 @@
         <div class="h1">Покрышки</div>
         <div class="flex">
             <div class="tires-logo">
-                <img src="{{ url('/assets/tires/'.str_replace (' ', '-', $invoice->tiresBrand).'.png')}}" alt="">
+                @php
+
+
+                    $file =  url('/assets/tires/'.str_replace (' ', '-', $invoice->tiresBrand).'.png');
+                    $file_headers = @get_headers($file);
+                    if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
+                        $exists = false;
+                    }
+                    else {
+                        $exists = true;
+                    }
+                @endphp
+
+
+                @if ($exists)
+                <img src="{{ url('/assets/tires/'.str_replace (' ', '-', $invoice->tiresBrand).'.png')}}" alt="{{$invoice->tiresBrand}}">
+                @else
+                    {{$invoice->tiresBrand}}
+                @endif
             </div>
             <div class="tires-chars">
                 <div class="tires-chars__title">
@@ -1613,7 +1664,7 @@
 <header class="header ">
     <div class="container header__container">
         <div class="header__logo">
-            <img src="{{ url('/storage/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+            <img src="{{ url('/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
 
     </div>

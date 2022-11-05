@@ -27,7 +27,7 @@ class Controller extends BaseController
     }
 
     public function getPdf(Request $request) {
-        $invoice = Invoice::find($request->id)->first();
+        $invoice = Invoice::where('id', $request->id)->first();
         $contxt = stream_context_create([
                                             'ssl' => [
                                                 'verify_peer' => FALSE,
@@ -39,7 +39,7 @@ class Controller extends BaseController
         $pdf = Pdf::setOptions(['isHTML5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf->getDomPDF()->setHttpContext($contxt);
         $pdf->loadView('car', ['invoice' => $invoice]);
-        $paper_size = [0.0, 0.0, 1340.78, 2200.94];
+        $paper_size = [0.0, 0.0, 1340.78, 2400.94];
         $pdf->set_paper($paper_size);
         return $pdf->download('invoice.pdf');
     }
