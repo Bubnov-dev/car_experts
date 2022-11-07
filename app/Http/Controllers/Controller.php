@@ -19,6 +19,9 @@ class Controller extends BaseController
 
     public function index(Request $request){
         $invoice = Invoice::where('id', $request->id)->first();
+        if(!$invoice){
+            abort(404);
+        }
         return view('welcome', ['invoice' => $invoice]);
     }
     public function car(Request $request){
@@ -28,6 +31,9 @@ class Controller extends BaseController
 
     public function getPdf(Request $request) {
         $invoice = Invoice::where('id', $request->id)->first();
+        if(!$invoice){
+            abort(404);
+        }
         $contxt = stream_context_create([
                                             'ssl' => [
                                                 'verify_peer' => FALSE,

@@ -290,6 +290,14 @@
 
 }
 
+.item__icon{
+    height: 20px;
+}
+
+.report__slider.slider-for .slide {
+    justify-content: center;
+}
+
 .tires-logo{
     width: 215px;
     height: 215px;
@@ -305,4 +313,13 @@
 
 .header__logo{
     max-height: 87px;
+}
+
+.overview__name{
+    width: 200px;
+}
+@media (max-width: 568px) {
+    .carousel__button{
+        display: none;
+    }
 }

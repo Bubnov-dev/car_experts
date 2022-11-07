@@ -144,7 +144,7 @@
             opacity: 0.5;
             width: 160px;
             float: right;
-            margin-right: 40px;
+            margin-right: 70px;
         }
 
         .overview {
@@ -803,7 +803,6 @@
 
         .footer .header__qr-text {
             margin-left: auto;
-            margin-right: 10px;
         }
 
         .page-break {
@@ -1104,77 +1103,9 @@
             place-items: center;
             padding: 23px;
         }
-
-        .tires-logo img, .tires-logo .img{
-            margin: 80px 30px;
-        }
-
-        .main-page{
-            text-align: center;
-        }
-        .main-page *{
-            text-align: center;
-        }
-
-        .main-page>*{
-            width: 100%;
-        }
-
-        .main-page__date{
-            position: absolute;
-            bottom: 100px;
-        }
-
-        .main-page__logo{
-            margin: 337px auto;
-        }
-
-        .main-page__title{
-            font-size: 120px;
-            font-weight: 500;
-            line-height: 115px;
-            letter-spacing: -0.02em;
-            text-align: center;
-
-            margin: 80px 0 100px;
-        }
-
-        .main-page__img{
-            width: 100px;
-            height: 100px;
-        }
     </style>
 </head>
 <body>
-<div class="main-page">
-    <div class="main-page__logo">
-
-    <img src="{{ url('/assets/LogoHeader.fccae26c.png') }}" alt="logo">
-    </div>
-
-    <div class="main-page__pre-title">
-        ОТЧЕТ ОБ ОСМОТРЕ АВТОМОБИЛЯ
-    </div>
-    <div class="main-page__title">
-        {{ $invoice->brand }} <br>
-        {{ $invoice->model }}
-    </div>
-
-    <div class="main-page__img">
-
-    <img
-        src="{{ url('/assets/brands/'.strtolower(str_replace (' ', '-', $invoice->brand)).'-logo.png')}}"
-        alt="car-logo">
-    </div>
-
-    <div class="main-page__date">
-        {{ explode(' ', $invoice->created_at)[0] }}
-
-    </div>
-
-</div>
-
-<div class="page-break"></div>
 <header class="header">
     <div class="container header__container">
         <div class="header__logo">
@@ -1563,7 +1494,7 @@
 <section class="report">
     <div class="container">
         @php
-            $photos = array_slice(array_merge($invoice->photosGeneralIn, $invoice->photosGeneralOut),0,7);
+            $photos = array_merge($invoice->photosGeneralIn, $invoice->photosGeneralOut);
         @endphp
         <table>
             <tr class="photo__line">
@@ -1608,11 +1539,6 @@
                 <img
                     src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
             </td>
-            <span class="header__qr-text">
-                <div class="header__qr-text">
-                    Report Online
-                </div>
-            </span>
         </tr>
 
     </table>
@@ -1668,7 +1594,6 @@
 
 
                     $file =  url('/assets/tires/'.str_replace (' ', '-', $invoice->tiresBrand).'.png');
-
                     $file_headers = @get_headers($file);
                     if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
                         $exists = false;
@@ -1683,11 +1608,7 @@
                     <img src="{{ url('/assets/tires/'.str_replace (' ', '-', $invoice->tiresBrand).'.png')}}"
                          alt="{{$invoice->tiresBrand}}">
                 @else
-                    <div class="img">
-
                     {{$invoice->tiresBrand}}
-                    </div>
-
                 @endif
             </div>
             <div class="tires-chars">
@@ -1837,11 +1758,6 @@
                 <img
                     src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
             </td>
-            <span class="header__qr-text">
-                <div class="header__qr-text">
-                    Report Online
-                </div>
-            </span>
         </tr>
 
     </table>
