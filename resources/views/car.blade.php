@@ -41,11 +41,11 @@
         }
 
         section {
-            padding-top: 100px
+            padding-top: 80@else
         }
 
         .container {
-            width: 1600px;
+            width: 1800px !important;
             padding: 0 50px;
             margin: auto;
             /*width: 1440px;*/
@@ -140,8 +140,8 @@
 
         .header__qr-text {
             font-size: 16px;
-            color: #222222;
-            opacity: 0.5;
+            color: #22222299;
+            opacity: 1;
             width: 160px;
             float: right;
             margin-right: 40px;
@@ -285,7 +285,7 @@
 
         .technical__title {
             margin-bottom: 20px;
-            font-size: 14px;
+            font-size: 16px;
             text-transform: uppercase
         }
 
@@ -362,6 +362,10 @@
             margin-bottom: 50px !important;
         }
 
+        .recommendation__text{
+            font-size: 24px;
+        }
+
         .recommendation__text p:last-child {
             margin-bottom: 0
         }
@@ -383,7 +387,8 @@
 
         .recommendation__cost .h3 {
             margin-top: 35px;
-            margin-bottom: 10px
+            margin-bottom: 10px;
+            font-size: 18px;
         }
 
         .report .h1 {
@@ -530,9 +535,7 @@
             background-image: url('/storage/assets/img/arrow-left.svg')
         }
 
-        .report img {
-            margin-bottom: 50px;
-        }
+
 
         .report .photo__line img:first-child {
             margin-right: 50px;
@@ -552,7 +555,8 @@
 
         }
 
-        .components table, .components table img {
+        .components table{
+            width: 100%;
         }
 
         .components .grid {
@@ -606,17 +610,20 @@
         }
 
         .footer {
-            margin-top: 120px
+            margin-top: 120px;
+            position: relative;
         }
 
         .footer .header__container {
-            padding: 120px 0 50px;
+            padding: 100px 0 50px;
             border-top: 1px rgba(0, 0, 0, .1) solid;
-            margin-left: 60px;
         }
 
         .footer .header__logo {
             width: 160px;
+        }
+        .footer{
+            width: 100%;
         }
 
 
@@ -795,6 +802,7 @@
             height: 110px;
             width: 160px;
             text-align: left;
+            font-size: 30px;
         }
 
         .footer .date__date {
@@ -893,25 +901,35 @@
     </style>
 
     <style>
+        .page-number{
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 16px;
+            color: #222;
+        }
         .report table {
             width: 100%;
         }
 
         img {
-            max-height: 470px;
+            max-height: 630px;
             object-fit: cover;
         }
 
         .report table img.big {
-            max-height: 760px;
+            max-height: 800px !important;
         }
-
+        .report table td{
+           padding-bottom: 30px;
+        }
         .report table img {
-            height: 100%
+            height: 100%;
+            margin-bottom: 25px;
         }
 
         .tires-chars {
-            margin: 0 15px;
+            margin: -35px 30px 0;
         }
 
         .tires-logo {
@@ -925,9 +943,17 @@
 
         .tires-chars__text * {
             display: inline-block;
+            position: relative;
         }
 
-
+        .tires-chars__text-text{
+            display: block;
+            position: absolute;
+            bottom: 18px;
+            padding-bottom: 7px;
+            height: 30px;
+            margin-top: -10px;
+        }
         .tires-chars__box {
             width: 30px;
             height: 30px;
@@ -942,14 +968,13 @@
             padding: 15px 5px 0;
             text-align: center;
             vertical-align: center;
-            margin-bottom: -15px;
             margin-right: 7px;
         }
 
         .tires-line {
             border-bottom: 1px solid #222;
             width: 215px;
-            margin: 30px 0;
+            margin: 20px 0;
         }
 
         .tires-photo img {
@@ -960,7 +985,10 @@
 
             object-fit: cover;
         }
-
+        .tires-chars__title {
+            text-transform: uppercase;
+            font-size: 18px;
+        }
         .condition__value img {
             max-width: 20px;
             max-height: 28px;
@@ -1103,12 +1131,23 @@
             border: 1px solid #222;
             place-items: center;
             padding: 23px;
+            margin-right: 15px;
         }
 
         .tires-logo img, .tires-logo .img{
-            margin: 80px 30px;
+            margin-left: 25px;
+            margin-right: 25px;
         }
 
+        .tires-logo img:first-child, .tires-logo .img:first-child{
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        .tires-logo img:nth-child(2), .tires-logo .img:nth-child(2) {
+            margin-left: 45px;
+
+
+        }
         .main-page{
             text-align: center;
         }
@@ -1123,10 +1162,16 @@
         .main-page__date{
             position: absolute;
             bottom: 100px;
+            font-size: 30px;
         }
 
         .main-page__logo{
             margin: 337px auto;
+            width: 500px;
+        }
+
+        .main-page__logo img{
+            width: 500px;
         }
 
         .main-page__title{
@@ -1143,6 +1188,7 @@
             width: 100px;
             height: 100px;
         }
+
     </style>
 </head>
 <body>
@@ -1168,10 +1214,23 @@
     </div>
 
     <div class="main-page__date">
-        {{ explode(' ', $invoice->created_at)[0] }}
+
+        @php
+
+
+            $_monthsList = array("-01-" => "янв", "-02-" => "фев",
+            "-03-" => "мар", "-04-" => "апр", "-05-" => "мая", "-06-" => "июн",
+            "-07-" => "июл", "-08-" => "авг", "-09-" => "сен",
+            "-10-" => "окт", "-11-" => "ноя", "-12-" => "дек");
+            $_mD = date("-m-"); //для замены
+
+            $currentDate =  date_create($invoice->updated_at)->format('d-m-Y');
+            $currentDate = str_replace($_mD, " ".$_monthsList[$_mD]." ", $currentDate);
+        @endphp
+        {{$currentDate}}
 
     </div>
-
+    <div class="box"></div>
 </div>
 
 <div class="page-break"></div>
@@ -1325,7 +1384,7 @@
                         Пробег
                     </div>
                     <div class="technical__value">
-                        {{ $invoice->mileage }} км
+                        {{ number_format($invoice->mileage, 0, ' ', ' ') }} км
 
                     </div>
                 </td>
@@ -1392,7 +1451,7 @@
                         Гарантия
                     </div>
                     <div class="technical__value">
-                        {{ $invoice->guarantee != 'Нет' ? $invoice->guaranteeYear : 'Нет' }}
+                        {{ $invoice->guarantee != 'Нет' ? 'До ' . $invoice->guaranteeYear : 'Нет' }}
                     </div>
                 </td>
 
@@ -1515,10 +1574,10 @@
         </div>
         <div class="recommendation__cost right">
             <img
-                src="data:image/png;base64,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"
+                src="{{ url('/assets/money.png') }}"
                 alt="cost">
             <div class="h3">Цена</div>
-            <div class="cost__value accent">{{ $invoice->price }}</div>
+            <div class="cost__value accent">{{ number_format($invoice->price, 0, ' ', ' ') }} AED</div>
 
         </div>
     </div>
@@ -1532,7 +1591,11 @@
                         Дата
                     </div>
                     <div class="date__title">
-                        {{ explode(' ', $invoice->updated_at ?? $invoice->created_at)[0] }}
+                        @php
+                            $currentDate =  date_create( (($invoice->updated_at  && $invoice->updated_at != $invoice->created_at) ? $invoice->updated_at : $invoice->created_at))->format('d-m-Y');;
+                            $currentDate = str_replace($_mD, " ".$_monthsList[$_mD]." ", $currentDate);
+                        @endphp
+                        {{$currentDate}}
                     </div>
                 </div>
             </span>
@@ -1542,13 +1605,16 @@
             </span>
             <span class="header__qr-text">
                 <div class="header__qr-text">
-                    Report Online
+                    Отсканируй QR-код, чтобы просмотреть детальный отчет онлайн
+
                 </div>
             </span>
         </div>
 
     </div>
+
 </footer>
+<div class="page-number">стр. 1</div>
 
 <div class="page-break"></div>
 
@@ -1557,13 +1623,26 @@
         <div class="header__logo">
             <img src="{{ url('/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
+        <div class="header__right">
+            <div class="header__qr">
+                <img
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(140)->generate('https://www.car-experts.ae/')) !!} ">
+            </div>
 
+        </div>
+        <div class="header__qr-text">
+            Отсканируйте QR-код,
+            чтобы посмотреть наши
+            контакты
+        </div>
     </div>
 </header>
 <section class="report">
     <div class="container">
+        <div class="h1">Фотоотчет</div>
+
         @php
-            $photos = array_slice(array_merge($invoice->photosGeneralIn, $invoice->photosGeneralOut),0,7);
+            $photos = array_slice(array_merge(array_slice($invoice->photosGeneralOut, 0, 3), $invoice->photosGeneralIn, ),0,5);
         @endphp
         <table>
             <tr class="photo__line">
@@ -1601,22 +1680,26 @@
                 <img src="{{url('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
             </td>
             <td class="header__contacts">
-                <span class="link contacts__link" href="">+7 910 966 54 12</span>
-                <span class="link contacts__link" href="">info@carexperts.ru</span>
+                <span class="link contacts__link">+971 52 595 32 80</span>
+                <span class="link contacts__link">hello@car-experts.ae</span>
+            </td>
+
+            <td class="header__qr-text">
+                <div class="header__qr-text">
+                    Отсканируй QR-код, чтобы просмотреть детальный отчет онлайн
+                    &#8209;
+                </div>
             </td>
             <td class="footer__qr right">
                 <img
                     src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
             </td>
-            <span class="header__qr-text">
-                <div class="header__qr-text">
-                    Report Online
-                </div>
-            </span>
         </tr>
 
     </table>
+
 </footer>
+<div class="page-number">стр. 2</div>
 
 <div class="page-break"></div>
 
@@ -1626,12 +1709,23 @@
         <div class="header__logo">
             <img src="{{ url('/assets/LogoHeader.fccae26c.png') }}" alt="logo">
         </div>
+        <div class="header__right">
+            <div class="header__qr">
+                <img
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(140)->generate('https://www.car-experts.ae/')) !!} ">
+            </div>
 
+        </div>
+        <div class="header__qr-text">
+            Отсканируйте QR-код,
+            чтобы посмотреть наши
+            контакты
+        </div>
     </div>
 </header>
 <section class="components">
     <div class="container">
-        <div class="h2">Технические компоненты</div>
+        <div class="h1">Технические компоненты</div>
         <table>
             <tr>
                 <td class="components__item item">
@@ -1664,6 +1758,8 @@
         <br>
         <div class="flex">
             <div class="tires-logo">
+                <img src="{{ url('/assets/tire-up.png') }}" alt="">
+
                 @php
 
 
@@ -1704,7 +1800,7 @@
                             <img src="{{url('/assets/notOk.png')}}" alt="">
                         @endif
                     </div>
-                    <div>
+                    <div class="tires-chars__text-text">
 
                         {{ $invoice->tiresStatus }}
                     </div>
@@ -1729,7 +1825,7 @@
                             <img src="{{url('/assets/alert.png')}}" alt="">
                         @endif
                     </div>
-                    <div>
+                    <div class="tires-chars__text-text">
 
                         {{ $invoice->tiresYear }}
                     </div>
@@ -1754,7 +1850,7 @@
 {{--            </td>--}}
 {{--            <td class="header__contacts">--}}
 {{--                <span class="link contacts__link" href="">+7 910 966 54 12</span>--}}
-{{--                <span class="link contacts__link" href="">info@carexperts.ru</span>--}}
+{{--                <span class="link contacts__link" href="">hello@car-experts.ae</span>--}}
 {{--            </td>--}}
 {{--            <td class="footer__qr right">--}}
 {{--                <img--}}
@@ -1831,27 +1927,42 @@
             </td>
             <td class="header__contacts">
                 <span class="link contacts__link" href="">+7 910 966 54 12</span>
-                <span class="link contacts__link" href="">info@carexperts.ru</span>
+                <span class="link contacts__link" href="">hello@car-experts.ae</span>
+            </td>
+
+            <td class="header__qr-text">
+                <div class="header__qr-text">
+                    Отсканируй QR-код, чтобы просмотреть детальный отчет онлайн
+
+                </div>
             </td>
             <td class="footer__qr right">
                 <img
                     src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
             </td>
-            <span class="header__qr-text">
-                <div class="header__qr-text">
-                    Report Online
-                </div>
-            </span>
         </tr>
 
     </table>
+
 </footer>
+<div class="page-number">стр. 3</div>
+
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 
+<script type="text/php">
+    if (isset($pdf)) {
+        $pdf->page_script('
+             if ($PAGE_COUNT > 1) {
+                 $font = $fontMetrics->getFont("Lato", "regular");
+                 $pdf->page_text(522, 770, "Page {PAGE_NUM} / {PAGE_COUNT}", $font, 8, array(.5,.5,.5));
+            }
+        ');
+   }
+</script>
 
 </body>
 </html>

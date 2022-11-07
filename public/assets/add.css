@@ -6,12 +6,16 @@
 
 .tires-chars__title {
     margin-bottom: 22px;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
 .tires-chars__box {
     width: 30px;
     height: 30px;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     place-items: center;
     border: 1px solid #000000;
     border-radius: 4px;
@@ -167,7 +171,7 @@
 
     .condition__side .Front-right-door {
         top: 56px;
-        right: 48px;
+        right: 37px;
     }
 
     .condition__side .Left-rear-door {
@@ -278,7 +282,10 @@
 }
 
 .tires-logo{
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
     place-items: center;
 }
  img {
@@ -311,7 +318,7 @@
     justify-content: space-between;
 }
 
-.header__logo{
+.header__logo, .header__logo img{
     max-height: 87px;
 }
 
@@ -322,4 +329,94 @@
     .carousel__button{
         display: none;
     }
+}
+.overview__equipment .equipment__item .item__icon img {
+    object-fit: contain;
+}
+
+
+
+/* index.c9ba42bb.css | http://trackback.ffox.site/assets/index.c9ba42bb.css */
+
+@media screen and (max-width: 1440px) {
+    .report__slider.slider-nav .slide .slide__image-wrapper {
+        /* height: 200px; */
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .report__slider.slider-nav .slide {
+        /* min-height: 240px; */
+        min-height: 190px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .report__slider.slider-nav .slide.slide:not(.slick-center) .slide__image-wrapper {
+        /* height: 153px; */
+        height: 143px;
+    }
+}
+
+.footer .header__container img{
+    height: 51px;
+    object-fit: contain;
+}
+
+.report{
+    background: #F9F9F9;
+    margin-top: 80px;
+    padding-bottom: 50px;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 568px) {
+    .report {
+        margin-top: 40px;
+        padding-bottom: 30px;
+
+        margin-bottom: 40px;
+    }
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.recommendation__cost img{
+    object-fit: contain;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+     .tires-flex {
+        gap: 20px;
+        justify-content: start !important;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header__date {
+        align-self: baseline;
+    }
+}
+.footer__btn{
+    transition: .3s;
+    text-decoration: none !important;
+    border-color: #4E2FE2;
+
+    background: #4E2FE2;
+    color: white
+}
+.footer__btn:hover{
+    background: white;
+    color: #222;
+    border-color: #222;
+}
+
+.footer .header__contacts{
+    margin-right: 0 !important;
 }

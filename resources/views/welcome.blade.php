@@ -26,18 +26,31 @@
             <img src="/assets/LogoHeader.fccae26c.png" alt="logo">
         </div>
         <div class="header__contacts">
-            <a class="link contacts__link" href="">+7 910 966 54 12</a>
-            <a class="link contacts__link" href="">info@carexperts.ru</a>
+            <a class="link contacts__link" href="tel:+971525953280">+971 52 595 32 80</a>
+            <a class="link contacts__link" href="mailto:hello@car-experts.ae">hello@car-experts.ae</a>
         </div>
         <div class="header__date">
             <div class="date__title">
-                @if($invoice->updated_at  && $invoice->updated_at != $invoice->created_at) Обновлено
+                @if($invoice->updated_at  && $invoice->updated_at != $invoice->created_at)
+                    Обновлен
                 @else
-                    Создано
+                    Создан
                 @endif
             </div>
             <div class="date__date accent">
-                {{ explode(' ', ($invoice->updated_at  && $invoice->updated_at != $invoice->created_at) ? $invoice->updated_at : $invoice->created_at)[0] }}
+
+                @php
+
+                    $_monthsList = array("-01-" => "янв", "-02-" => "фев",
+                    "-03-" => "мар", "-04-" => "апр", "-05-" => "мая", "-06-" => "июн",
+                    "-07-" => "июл", "-08-" => "авг", "-09-" => "сен",
+                    "-10-" => "окт", "-11-" => "ноя", "-12-" => "дек");
+                    $_mD = date("-m-"); //для замены
+
+                    $currentDate =  date_create( (($invoice->updated_at  && $invoice->updated_at != $invoice->created_at) ? $invoice->updated_at : $invoice->created_at))->format('d-m-Y');;
+                    $currentDate = str_replace($_mD, " ".$_monthsList[$_mD]." ", $currentDate);
+                @endphp
+                {{$currentDate}}
             </div>
         </div>
     </div>
@@ -48,6 +61,7 @@
         <div class="overview__content">
             <div class="overview__logo">
                 <img
+                    loading="lazy"
                     src="/assets/brands/{{strtolower(str_replace (' ', '-', $invoice->brand)).'-logo.png'}}"
                     alt="car-logo">
             </div>
@@ -99,7 +113,9 @@
                     @foreach($invoice->equipment as $item)
                         <div class="equipment__item">
                             <div class="item__icon">
-                                <img src="/assets/icons/{{ isset($equipmentIco[$item]) ? $equipmentIco[$item] : 'no-icon'  }}.png" alt="icon">
+                                <img
+                                    src="/assets/icons/{{ isset($equipmentIco[$item]) ? $equipmentIco[$item] : 'no-icon'  }}.png"
+                                    alt="icon">
                             </div>
                             <div class="item__name">
                                 {{ $item }}
@@ -129,7 +145,7 @@
                         Пробег
                     </div>
                     <div class="technical__value">
-                        {{ $invoice->mileage }} км
+                        {{ number_format($invoice->mileage, 0, ' ', ' ') }} км
                     </div>
                 </td>
                 <td>
@@ -195,7 +211,7 @@
                         Гарантия
                     </div>
                     <div class="technical__value">
-                        {{ $invoice->guarantee != 'Нет' ? $invoice->guaranteeYear : 'Нет' }}
+                        {{ $invoice->guarantee != 'Нет' ? 'До ' .$invoice->guaranteeYear : 'Нет' }}
                     </div>
                 </td>
             </tr>
@@ -234,7 +250,6 @@
             <div class="condition__side condition__side-front">
                 @foreach($invoice->paintedParts as $part)
 
-
                     <div class="condition__value {{ $translate[$part['part']] }}">
                         @if($part['rating'] == "5")
                             <img src="/assets/1000.png" alt="">
@@ -249,20 +264,20 @@
                         @endif
                     </div>
                 @endforeach
-{{--                @foreach($translate as $item)--}}
-{{--                    <div class="condition__value {{ $item}}">--}}
-{{--                            <img src="/assets/paint-1000.png" alt="">--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
+                {{--                @foreach($translate as $item)--}}
+                {{--                    <div class="condition__value {{ $item}}">--}}
+                {{--                            <img src="/assets/paint-1000.png" alt="">--}}
+                {{--                    </div>--}}
+                {{--                @endforeach--}}
 
                 <img src="/assets/car-front.png" alt="car-front">
             </div>
             <div class="condition__side condition__side-back">
-{{--                @foreach($translate as $item)--}}
-{{--                    <div class="condition__value {{ $item}}">--}}
-{{--                        <img src="/assets/paint-1000.png" alt="">--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
+                {{--                @foreach($translate as $item)--}}
+                {{--                    <div class="condition__value {{ $item}}">--}}
+                {{--                        <img src="/assets/paint-1000.png" alt="">--}}
+                {{--                    </div>--}}
+                {{--                @endforeach--}}
                 @foreach($invoice->paintedParts as $part)
                     <div class="condition__value {{ $translate[$part['part']] }}">
                         @if($part['rating'] == "5")
@@ -319,10 +334,10 @@
         </div>
         <div class="recommendation__cost">
             <img
-                src="data:image/png;base64,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"
+                src="/assets/money.png"
                 alt="cost">
             <div class="h3">Цена</div>
-            <div class="cost__value accent">{{ $invoice->price }}</div>
+            <div class="cost__value accent">{{ number_format($invoice->price, 0, ' ', ' ') }} AED</div>
         </div>
     </div>
 </section>
@@ -335,14 +350,6 @@
         </div>
         <div class="report__photo report__type">
             <div class="report__slider slider-for">
-                @foreach($invoice->photosGeneralIn as $photo)
-                    <div class="slide">
-                        <div class="slide__image">
-                            <img src="{{ $photo }}" alt="slide" data-fancybox="demo" data-caption="Фотоотчет">
-                        </div>
-
-                    </div>
-                @endforeach
 
                 @foreach($invoice->photosGeneralOut as $photo)
                     <div class="slide">
@@ -351,9 +358,18 @@
                         </div>
                     </div>
                 @endforeach
+                    @foreach($invoice->photosGeneralIn as $photo)
+                    <div class="slide">
+                        <div class="slide__image">
+                            <img src="{{ $photo }}" alt="slide" data-fancybox="demo" data-caption="Фотоотчет">
+                        </div>
+
+                    </div>
+                @endforeach
+
             </div>
             <div class="report__slider slider-nav">
-                @foreach($invoice->photosGeneralIn as $photo)
+                @foreach($invoice->photosGeneralOut as $photo)
 
                     <div class="slide">
                         <div class="slide__image-wrapper">
@@ -361,7 +377,7 @@
                         </div>
                     </div>
                 @endforeach
-                @foreach($invoice->photosGeneralOut as $photo)
+                @foreach($invoice->photosGeneralIn as $photo)
 
                     <div class="slide">
                         <div class="slide__image-wrapper">
@@ -386,13 +402,13 @@
         <div class="flex">
             @if ( $invoice->photosVIN)
 
-            <div class="components__item item">
-                <a class="item__image" data-fancybox="demo" data-caption="Технические компоненты"
-                   href="{{ $invoice->photosVIN[0] }}">
-                    <img src="{{ $invoice->photosVIN[0] }}" alt="vin">
-                </a>
-                <div class="item__text h2">VIN</div>
-            </div>
+                <div class="components__item item">
+                    <a class="item__image" data-fancybox="demo" data-caption="Технические компоненты"
+                       href="{{ $invoice->photosVIN[0] }}">
+                        <img src="{{ $invoice->photosVIN[0] }}" alt="vin">
+                    </a>
+                    <div class="item__text h2">VIN</div>
+                </div>
             @endif
             @if ( $invoice->photosDocks)
                 <a class="components__item item" data-fancybox="demo" data-caption="Технические компоненты"
@@ -409,8 +425,10 @@
 <section class="components">
     <div class="container">
         <div class="h1">Покрышки</div>
-        <div class="flex">
+        <div class="flex tires-flex">
             <div class="tires-logo">
+                <img src="/assets/tire-up.png" alt="">
+
                 @php
 
 
@@ -438,7 +456,6 @@
                 </div>
                 <div class="tires-chars__text">
                     <div class="tires-chars__box">
-
                         @if($invoice->tiresStatus == 'В норме')
                             <img src="/assets/ok.png" alt="">
                         @else
@@ -471,9 +488,9 @@
             </div>
 
             @if ($invoice->photosTires)
-            <div class="tires-photo">
-                <img src="{{ $invoice->photosTires[0] }}" alt="">
-            </div>
+                <div class="tires-photo">
+                    <img src="{{ $invoice->photosTires[0] }}" alt="">
+                </div>
             @endif
         </div>
     </div>
@@ -488,7 +505,7 @@
                 @foreach((array_merge($invoice->badParts, $invoice->badPartsOut, $invoice->badPartsIn)) as $badPart)
                     <div class="components__item item">
                         <img class="item__image" src="{{ $badPart['photo'][0] }}" alt="vin" data-fancybox="demo"
-                             data-caption="Повреждения">
+                             data-caption="Повреждение – {{ $badPart['text'] }}">
                         <div class="item__desc">
                             {{ $badPart['text'] }}
                         </div>
@@ -515,11 +532,11 @@
 <footer class="footer">
     <div class="container header__container">
         <div class="header__logo">
-            <img src="/assets/LogoFooter.049f563c.png" alt="logo">
+            <img src="/assets/LogoFooter.049f563c.svg" alt="logo">
         </div>
         <div class="header__contacts">
-            <a class="link contacts__link" href="">+7 910 966 54 12</a>
-            <a class="link contacts__link" href="">info@carexperts.ru</a>
+            <a class="link contacts__link" href="tel:+971525953280">+971 52 595 32 80</a>
+            <a class="link contacts__link" href="mailto:hello@car-experts.ae">hello@car-experts.ae</a>
         </div>
     </div>
     <div class="container footer__container flex">
@@ -528,7 +545,11 @@
                 Дата диагностики
             </div>
             <div class="date__date accent">
-                {{ explode(' ', $invoice->created_at)[0] }}
+                @php
+                    $currentDate =  date_create($invoice->created_at)->format('d-m-Y');
+                    $currentDate = str_replace($_mD, " ".$_monthsList[$_mD]." ", $currentDate);
+                @endphp
+                {{ $currentDate }}
             </div>
         </div>
         @if($invoice->updated_at && $invoice->created_at != $invoice->updated_at)
@@ -537,12 +558,17 @@
                     Обновлено
                 </div>
                 <div class="date__date accent">
-                    {{ explode(' ', $invoice->updated_at )[0] }}
+
+                    @php
+                        $currentDate =  date_create($invoice->updated_at)->format('d-m-Y');;
+                        $currentDate = str_replace($_mD, " ".$_monthsList[$_mD]." ", $currentDate);
+                    @endphp
+                    {{ $currentDate }}
 
                 </div>
             </div>
         @endif
-        <a class="btn footer__btn" href="/pdf/{{$invoice->id}}" targer="_about">
+        <a class="btn footer__btn" href="/pdf/{{$invoice->id}}" target="_about">
             Скачать PDF-версию
         </a>
     </div>
