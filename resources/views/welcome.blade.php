@@ -18,6 +18,7 @@
     <script type="module" crossorigin src="/assets/index.fe9cca41.js"></script>
     <link rel="stylesheet" href="/assets/index.c9ba42bb.css">
     <link rel="stylesheet" href="/assets/add.css">
+    <link rel="preload" as="image" href="/assets/brands/{{strtolower(str_replace (' ', '-', $invoice->brand)).'-logo.png'}}">
 </head>
 <body>
 <header class="header">
@@ -61,7 +62,7 @@
         <div class="overview__content">
             <div class="overview__logo">
                 <img
-                    loading="lazy"
+
                     src="/assets/brands/{{strtolower(str_replace (' ', '-', $invoice->brand)).'-logo.png'}}"
                     alt="car-logo">
             </div>
@@ -320,7 +321,9 @@
                 <p>
                     {{ $invoice->smells ? 'Посторонние запахи отстуствуют' : 'Посторонние запахи присуствуют' }}
                 </p>
-                {{ $invoice->equipmentStatus }}
+                <p>
+                   {{ $invoice->equipmentStatus }}
+                </p>
 
                 @if($invoice->equipmentStatus  == 'Есть замечания')
                     <p>

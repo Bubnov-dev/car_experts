@@ -1,9 +1,12 @@
 .tires-chars__text {
     display: flex;
     gap: 16px;
+    text-transform: uppercase;
 
 }
-
+.tires-chars__text * {
+    text-transform: uppercase;
+}
 .tires-chars__title {
     margin-bottom: 22px;
     text-transform: uppercase;
@@ -420,3 +423,39 @@ body{
 .footer .header__contacts{
     margin-right: 0 !important;
 }
+
+
+
+/* index.c9ba42bb.css | http://trackback.ffox.site/assets/index.c9ba42bb.css */
+
+@media screen and (max-width: 560px) {
+    .overview__equipment .equipment__grid {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .technical__title {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* index.c9ba42bb.css | http://trackback.ffox.site/assets/index.c9ba42bb.css */
+
+@media screen and (max-width: 560px) {
+    .header__date .date__title {
+        /* font-size: 10px; */
+        font-size: 14px;
+    }
+
+    .tires-line {
+        margin: 20px 0;
+    }
+}
+

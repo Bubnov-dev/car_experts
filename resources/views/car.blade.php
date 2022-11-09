@@ -31,7 +31,7 @@
 
         body, * {
             font-family: 'Jost', sans-serif;
-            font-size: 20px;
+            font-size: 24px;
             line-height: 110%;
             letter-spacing: -.02em
         }
@@ -67,7 +67,7 @@
         }
 
         h2, .h2 {
-            font-size: 30px;
+            font-size: 48px;
             line-height: 110%;
             font-weight: 500;
             margin-bottom: 60px
@@ -133,16 +133,16 @@
         }
 
         .header__date .date__title {
-            font-size: 16px;
+            font-size: 20px;
             line-height: 110%;
             margin-bottom: 4px
         }
 
         .header__qr-text {
-            font-size: 16px;
+            font-size: 18px;
             color: #22222299;
             opacity: 1;
-            width: 160px;
+            width: 175px;
             float: right;
             margin-right: 40px;
         }
@@ -158,7 +158,7 @@
         }
 
         .overview__left {
-            width: 550px;
+            width: 490px;
         }
 
         .overview__logo {
@@ -205,11 +205,11 @@
         }
 
         .overview__right {
-            width: 800px;
+            width: 1100px;
         }
 
         .overview__equipment .equipment__title {
-            font-size: 14px;
+            font-size: 20px;
             text-transform: uppercase;
             margin-bottom: 30px
         }
@@ -220,7 +220,7 @@
             /*row-gap: 25px;*/
             font-size: 16px;
             color: #444;
-            width: 1000px
+            max-width: 1400px
         }
 
         .overview__equipment tr {
@@ -285,7 +285,7 @@
 
         .technical__title {
             margin-bottom: 20px;
-            font-size: 16px;
+            font-size: 20px;
             text-transform: uppercase
         }
 
@@ -600,7 +600,7 @@
         .components__item .item__text {
             position: relative;
             left: 20px;
-            bottom: 70px;
+            bottom: 100px;
             /*margin-bottom: 0;*/
             color: #fff
         }
@@ -621,6 +621,9 @@
 
         .footer .header__logo {
             width: 160px;
+
+            vertical-align: top;
+            padding-top: 35px;
         }
         .footer{
             width: 100%;
@@ -643,11 +646,10 @@
         }
 
         .footer__qr {
-            margin-right: 80px;
-            padding: 10px;
-            border-radius: 15px 0;
+            border-radius: 20px 0;
+            padding: 15px;
             border: 1px solid black;
-            width: 100px;
+            width: 140px !important;
         }
 
         .footer__date {
@@ -707,15 +709,24 @@
         .equipment__item-2 {
             padding-right: 30px;
             height: 30px;
-            max-width: 230px;
+            /*max-width: 230px;*/
             font-size: 16px;
+            width: 315px;
             line-height: 110%;
-            padding-bottom: 12px;
+            padding-bottom: 20px;
+
         }
+
 
         .equipment__item-2 > span {
             padding: 17px 0;
+            font-size: 20px;
+            /*display: inline-block;*/
         }
+
+        /*.equipment__item-2 > span:nth-child(2){*/
+        /*    width: 85%;*/
+        /*}*/
 
 
         .equipment__item-2 img {
@@ -812,6 +823,7 @@
         .footer .header__qr-text {
             margin-left: auto;
             margin-right: 10px;
+            width: 190px !important;
         }
 
         .page-break {
@@ -901,6 +913,7 @@
     </style>
 
     <style>
+
         .page-number{
             position: absolute;
             bottom: 15px;
@@ -929,7 +942,9 @@
         }
 
         .tires-chars {
-            margin: -35px 30px 0;
+            margin: 0 30px 0;
+            vertical-align: top;
+
         }
 
         .tires-logo {
@@ -953,6 +968,8 @@
             padding-bottom: 7px;
             height: 30px;
             margin-top: -10px;
+            font-size: 30px;
+            text-transform: uppercase;
         }
         .tires-chars__box {
             width: 30px;
@@ -987,7 +1004,10 @@
         }
         .tires-chars__title {
             text-transform: uppercase;
-            font-size: 18px;
+            font-size: 20px;
+        }
+        .tires-chars__title-br{
+            height: 25px;
         }
         .condition__value img {
             max-width: 20px;
@@ -1132,6 +1152,9 @@
             place-items: center;
             padding: 23px;
             margin-right: 15px;
+            text-align: center;
+            font-weight: 700;
+            vertical-align: top;
         }
 
         .tires-logo img, .tires-logo .img{
@@ -1163,6 +1186,7 @@
             position: absolute;
             bottom: 100px;
             font-size: 30px;
+            color: #22222299;
         }
 
         .main-page__logo{
@@ -1174,6 +1198,10 @@
             width: 500px;
         }
 
+        .main-page__pre-title{
+            font-size: 30px;
+            text-transform: uppercase;
+        }
         .main-page__title{
             font-size: 120px;
             font-weight: 500;
@@ -1189,6 +1217,13 @@
             height: 100px;
         }
 
+        .footer .header__logo img{
+            width: 100%;
+        }
+
+        .tires-components{
+            /*margin-top: -50px;*/
+        }
     </style>
 </head>
 <body>
@@ -1285,7 +1320,7 @@
                         @php
                             $equipmentItems = $invoice->equipment;
 
-                            $rows = ceil(count($equipmentItems)/3);
+                            $rows = ceil(count($equipmentItems)/4);
 
 
                             $equipmentIco = [
@@ -1325,7 +1360,7 @@
                         @for($i = 0; $i< $rows; $i++)
                             <tr>
 
-                                @for($j = 3*$i; $j < 3*($i+1); $j++)
+                                @for($j = 4*$i; $j < 4*($i+1); $j++)
                                     @isset($equipmentItems[$j])
                                         <td class="equipment__item-2">
                                             <span class="">
@@ -1365,6 +1400,8 @@
         </div>
     </div>
 </section>
+<br>
+<br>
 <section class="technical">
     <div class="container">
         <div class="h2">Технические характеристики</div>
@@ -1409,7 +1446,7 @@
                         VIN
                     </div>
                     <div class="technical__value">
-                        {{ $invoice->VIN }}
+                        {{ strtoupper($invoice->VIN) }}
                     </div>
                 </td>
             </tr>
@@ -1459,6 +1496,8 @@
         </table>
     </div>
 </section>
+<br>
+<br>
 <section class="condition">
     <div class="container">
         <div class="h2">Состояние кузова</div>
@@ -1550,6 +1589,7 @@
         </table>
     </div>
 </section>
+
 <section class="recommendation">
     <div class="container flex">
         <div class="recommendation-left left">
@@ -1561,7 +1601,10 @@
                 <p>
                     {{ $invoice->smells ? 'Посторонние запахи отстуствуют' : 'Посторонние запахи присуствуют' }}
                 </p>
-                {{ $invoice->equipmentStatus }}
+                <p>
+
+                    {{ $invoice->equipmentStatus }}
+                </p>
 
                 @if($invoice->equipmentStatus  == 'Есть замечания')
                     <p>
@@ -1601,7 +1644,7 @@
             </span>
             <span class="footer__qr right">
                 <img
-                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(140)->generate(URL::to('/'.$invoice->id))) !!} ">
             </span>
             <span class="header__qr-text">
                 <div class="header__qr-text">
@@ -1614,7 +1657,7 @@
     </div>
 
 </footer>
-<div class="page-number">стр. 1</div>
+<div class="page-number">стр. 2</div>
 
 <div class="page-break"></div>
 
@@ -1677,7 +1720,7 @@
         <tr>
 
             <td class="header__logo">
-                <img src="{{url('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
+                <img src="{{url('/assets/LogoFooter.049f563c.png') }}" alt="logo">
             </td>
             <td class="header__contacts">
                 <span class="link contacts__link">+971 52 595 32 80</span>
@@ -1687,19 +1730,19 @@
             <td class="header__qr-text">
                 <div class="header__qr-text">
                     Отсканируй QR-код, чтобы просмотреть детальный отчет онлайн
-                    &#8209;
+
                 </div>
             </td>
             <td class="footer__qr right">
                 <img
-                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(140)->generate(URL::to('/'.$invoice->id))) !!} ">
             </td>
         </tr>
 
     </table>
 
 </footer>
-<div class="page-number">стр. 2</div>
+<div class="page-number">стр. 3</div>
 
 <div class="page-break"></div>
 
@@ -1751,7 +1794,7 @@
         </table>
     </div>
 </section>
-<section class="components">
+<section class="components tires-components">
     <div class="container">
         <div class="h1">Покрышки</div>
         <br>
@@ -1790,7 +1833,7 @@
                 <div class="tires-chars__title">
                     Состояние
                 </div>
-                <br>
+                <div class="tires-chars__title-br"></div>
                 <div class="tires-chars__text">
                     <div class="tires-chars__box">
 
@@ -1814,8 +1857,7 @@
                 <div class="tires-chars__title">
                     год выпуска
                 </div>
-                <br>
-
+                <div class="tires-chars__title-br"></div>
                 <div class="tires-chars__text">
                     <div class="tires-chars__box">
 
@@ -1841,42 +1883,62 @@
         </div>
     </div>
 </section>
-{{--<footer class="footer">--}}
-{{--    <table class="container header__container">--}}
-{{--        <tr>--}}
+<footer class="footer">
+    <table class="container header__container">
+        <tr>
 
-{{--            <td class="header__logo">--}}
-{{--                <img src="{{url('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">--}}
-{{--            </td>--}}
-{{--            <td class="header__contacts">--}}
-{{--                <span class="link contacts__link" href="">+7 910 966 54 12</span>--}}
-{{--                <span class="link contacts__link" href="">hello@car-experts.ae</span>--}}
-{{--            </td>--}}
-{{--            <td class="footer__qr right">--}}
-{{--                <img--}}
-{{--                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">--}}
-{{--            </td>--}}
-{{--        </tr>--}}
+            <td class="header__logo">
+                <img src="{{url('/assets/LogoFooter.049f563c.png') }}" alt="logo">
+            </td>
+            <td class="header__contacts">
+                <span class="link contacts__link" href="">+971 52 595 32 80</span>
+                <span class="link contacts__link" href="">hello@car-experts.ae</span>
+            </td>
 
-{{--    </table>--}}
-{{--</footer>--}}
+            <td class="header__qr-text">
+                <div class="header__qr-text">
+                    Отсканируй QR-код, чтобы просмотреть детальный отчет онлайн
 
-{{--<div class="page-break"></div>--}}
+                </div>
+            </td>
+            <td class="footer__qr right">
+                <img
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(140)->generate(URL::to('/'.$invoice->id))) !!} ">
+            </td>
+        </tr>
+
+    </table>
+
+</footer>
+<div class="page-number">стр. 4</div>
+
+<div class="page-break"></div>
 
 
-{{--<header class="header ">--}}
-{{--    <div class="container header__container">--}}
-{{--        <div class="header__logo">--}}
-{{--            <img src="{{ url('/assets/LogoHeader.fccae26c.png') }}" alt="logo">--}}
-{{--        </div>--}}
+<header class="header ">
+    <div class="container header__container">
+        <div class="header__logo">
+            <img src="{{ url('/assets/LogoHeader.fccae26c.png') }}" alt="logo">
+        </div>
+        <div class="header__right">
+            <div class="header__qr">
+                <img
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(140)->generate('https://www.car-experts.ae/')) !!} ">
+            </div>
 
-{{--    </div>--}}
-{{--</header>--}}
+        </div>
+        <div class="header__qr-text">
+            Отсканируйте QR-код,
+            чтобы посмотреть наши
+            контакты
+        </div>
+    </div>
+</header>
 <section class="components brakes">
     <div class="container">
         <div class="h1">Повреждения</div>
         @php
-        $badParts = (array_merge($invoice->badParts, $invoice->badPartsOut, $invoice->badPartsIn)) ;
+            $badParts = (array_merge($invoice->badParts, $invoice->badPartsOut, $invoice->badPartsIn)) ;
         @endphp
         @if(count($badParts)>0)
             <table>
@@ -1891,42 +1953,43 @@
                         @endif
                         @isset($badParts[$i])
 
-                                <td>
-                                    <img src="{{ $badParts[$i]['photo'][0] }}" alt="slide">
-                                    <br>
-                                    {{ $badParts[$i]['text'] }}
-                                </td>
+                            <td>
+                                <img src="{{ $badParts[$i]['photo'][0] }}" alt="slide">
+                                <br>
+                                {{ $badParts[$i]['text'] }}
+                            </td>
                         @endif
 
                     </tr>
                 @endfor
             </table>
         @else
-        <div class="no-trash">
-            <div class="h1">
-                Вы счастливчик! <br>
-                Машина без единого повреждения
+            <div class="no-trash">
+                <div class="h1">
+                    Вы счастливчик! <br>
+                    Машина без единого повреждения
+                </div>
+                <div class="no-trash__like">
+                    <svg width="115" height="120" viewBox="0 0 115 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.15885 56.9702V99.9123H26.3389L27.2569 100.02C44.1349 103.956 55.3189 106.794 60.8929 108.552C68.2969 110.886 71.0569 111.456 76.079 111.792C79.835 112.05 84.101 110.604 86.045 108.624C87.119 107.532 87.923 105.288 88.241 101.808C88.3068 101.079 88.5677 100.38 88.9963 99.7856C89.4249 99.1913 90.0054 98.7232 90.677 98.4303C92.171 97.7823 93.413 96.7262 94.451 95.1902C95.411 93.7862 96.035 91.1702 96.149 87.3842C96.169 86.6882 96.3664 86.0088 96.7223 85.4103C97.0782 84.8119 97.581 84.3141 98.183 83.9642C101.675 81.9422 103.403 79.6622 103.763 76.9862C104.159 74.0282 103.199 70.6982 100.685 66.9062C100.095 66.0169 99.8754 64.9325 100.073 63.8838C100.27 62.835 100.868 61.9045 101.741 61.2902C104.147 59.5982 105.467 57.2462 105.797 53.9102C106.325 48.5942 102.935 44.6642 95.261 43.8782C88.4262 43.2022 81.5254 43.7776 74.8969 45.5762C74.145 45.7727 73.3526 45.7503 72.613 45.5118C71.8734 45.2732 71.2172 44.8284 70.7218 44.2296C70.2264 43.6308 69.9123 42.903 69.8165 42.1318C69.7207 41.3605 69.8471 40.578 70.1809 39.8762C73.1809 33.5282 74.849 28.2902 75.239 24.2341C75.749 18.8521 74.507 14.9521 71.6029 11.7361C69.4009 9.30012 65.8789 7.90812 64.5589 8.19612C62.8189 8.56812 61.6849 9.57612 60.2089 13.1041C59.3389 15.1921 58.9189 16.9681 58.1989 21.1141C57.5089 25.0501 57.1309 26.8262 56.3449 29.1542C53.9749 36.2102 48.1609 43.5242 40.3549 48.5702C34.8841 52.1025 28.9549 54.8682 22.7329 56.7902C22.3442 56.91 21.9396 56.9707 21.5329 56.9702H8.15885ZM7.90685 108.09C5.96885 108.144 4.22885 107.712 2.77085 106.692C0.910843 105.39 0.0348418 103.338 0.0168418 100.974L0.0348418 57.0362C-0.169158 54.6962 0.520842 52.5482 2.15284 50.9522C3.68285 49.4522 5.68085 48.7442 7.79285 48.7922H20.9029C26.206 47.1024 31.262 44.7177 35.9389 41.7002C42.2269 37.6322 46.8589 31.8002 48.6289 26.5441C49.2349 24.7321 49.5589 23.2321 50.1709 19.7041C50.9989 14.9701 51.5149 12.7681 52.7029 9.93612C55.1629 4.04412 58.3909 1.16411 62.8429 0.198111C67.2229 -0.749891 73.601 1.77611 77.633 6.24012C82.103 11.1841 84.077 17.3701 83.345 25.0141C83.033 28.3022 82.121 31.9802 80.621 36.0782C85.7436 35.3316 90.9387 35.2188 96.089 35.7422C108.131 36.9722 114.893 44.8142 113.909 54.7262C113.477 58.9982 111.929 62.6282 109.295 65.4782C111.509 69.7442 112.391 73.9622 111.839 78.0782C111.203 82.8182 108.563 86.7662 104.171 89.8322C103.829 93.9902 102.875 97.3083 101.183 99.7923C99.8498 101.799 98.1103 103.504 96.077 104.796C95.429 108.9 94.067 112.11 91.841 114.366C88.151 118.122 81.557 120.36 75.533 119.952C69.8149 119.568 66.4309 118.872 58.4509 116.352C53.1889 114.69 42.2929 111.93 25.8709 108.09H7.90085H7.90685ZM18.1129 55.1042C18.1113 54.5674 18.2157 54.0355 18.42 53.5392C18.6243 53.0428 18.9246 52.5916 19.3036 52.2114C19.6826 51.8313 20.133 51.5297 20.6287 51.3239C21.1245 51.1181 21.6561 51.0122 22.1929 51.0122C22.7287 51.0138 23.2589 51.1208 23.7533 51.3273C24.2477 51.5338 24.6966 51.8357 25.0744 52.2157C25.4521 52.5956 25.7513 53.0463 25.9549 53.5419C26.1585 54.0375 26.2625 54.5684 26.2609 55.1042V101.172C26.2617 101.708 26.1569 102.239 25.9526 102.734C25.7483 103.229 25.4484 103.68 25.0701 104.059C24.6918 104.438 24.2425 104.74 23.7478 104.945C23.2531 105.151 22.7227 105.257 22.1869 105.258C21.6511 105.257 21.1207 105.151 20.626 104.945C20.1313 104.74 19.6819 104.438 19.3036 104.059C18.9253 103.68 18.6255 103.229 18.4211 102.734C18.2168 102.239 18.1121 101.708 18.1129 101.172V55.1042Z"
+                            fill="#222222"/>
+                    </svg>
+                </div>
             </div>
-            <div class="no-trash__like">
-                <svg width="115" height="120" viewBox="0 0 115 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M8.15885 56.9702V99.9123H26.3389L27.2569 100.02C44.1349 103.956 55.3189 106.794 60.8929 108.552C68.2969 110.886 71.0569 111.456 76.079 111.792C79.835 112.05 84.101 110.604 86.045 108.624C87.119 107.532 87.923 105.288 88.241 101.808C88.3068 101.079 88.5677 100.38 88.9963 99.7856C89.4249 99.1913 90.0054 98.7232 90.677 98.4303C92.171 97.7823 93.413 96.7262 94.451 95.1902C95.411 93.7862 96.035 91.1702 96.149 87.3842C96.169 86.6882 96.3664 86.0088 96.7223 85.4103C97.0782 84.8119 97.581 84.3141 98.183 83.9642C101.675 81.9422 103.403 79.6622 103.763 76.9862C104.159 74.0282 103.199 70.6982 100.685 66.9062C100.095 66.0169 99.8754 64.9325 100.073 63.8838C100.27 62.835 100.868 61.9045 101.741 61.2902C104.147 59.5982 105.467 57.2462 105.797 53.9102C106.325 48.5942 102.935 44.6642 95.261 43.8782C88.4262 43.2022 81.5254 43.7776 74.8969 45.5762C74.145 45.7727 73.3526 45.7503 72.613 45.5118C71.8734 45.2732 71.2172 44.8284 70.7218 44.2296C70.2264 43.6308 69.9123 42.903 69.8165 42.1318C69.7207 41.3605 69.8471 40.578 70.1809 39.8762C73.1809 33.5282 74.849 28.2902 75.239 24.2341C75.749 18.8521 74.507 14.9521 71.6029 11.7361C69.4009 9.30012 65.8789 7.90812 64.5589 8.19612C62.8189 8.56812 61.6849 9.57612 60.2089 13.1041C59.3389 15.1921 58.9189 16.9681 58.1989 21.1141C57.5089 25.0501 57.1309 26.8262 56.3449 29.1542C53.9749 36.2102 48.1609 43.5242 40.3549 48.5702C34.8841 52.1025 28.9549 54.8682 22.7329 56.7902C22.3442 56.91 21.9396 56.9707 21.5329 56.9702H8.15885ZM7.90685 108.09C5.96885 108.144 4.22885 107.712 2.77085 106.692C0.910843 105.39 0.0348418 103.338 0.0168418 100.974L0.0348418 57.0362C-0.169158 54.6962 0.520842 52.5482 2.15284 50.9522C3.68285 49.4522 5.68085 48.7442 7.79285 48.7922H20.9029C26.206 47.1024 31.262 44.7177 35.9389 41.7002C42.2269 37.6322 46.8589 31.8002 48.6289 26.5441C49.2349 24.7321 49.5589 23.2321 50.1709 19.7041C50.9989 14.9701 51.5149 12.7681 52.7029 9.93612C55.1629 4.04412 58.3909 1.16411 62.8429 0.198111C67.2229 -0.749891 73.601 1.77611 77.633 6.24012C82.103 11.1841 84.077 17.3701 83.345 25.0141C83.033 28.3022 82.121 31.9802 80.621 36.0782C85.7436 35.3316 90.9387 35.2188 96.089 35.7422C108.131 36.9722 114.893 44.8142 113.909 54.7262C113.477 58.9982 111.929 62.6282 109.295 65.4782C111.509 69.7442 112.391 73.9622 111.839 78.0782C111.203 82.8182 108.563 86.7662 104.171 89.8322C103.829 93.9902 102.875 97.3083 101.183 99.7923C99.8498 101.799 98.1103 103.504 96.077 104.796C95.429 108.9 94.067 112.11 91.841 114.366C88.151 118.122 81.557 120.36 75.533 119.952C69.8149 119.568 66.4309 118.872 58.4509 116.352C53.1889 114.69 42.2929 111.93 25.8709 108.09H7.90085H7.90685ZM18.1129 55.1042C18.1113 54.5674 18.2157 54.0355 18.42 53.5392C18.6243 53.0428 18.9246 52.5916 19.3036 52.2114C19.6826 51.8313 20.133 51.5297 20.6287 51.3239C21.1245 51.1181 21.6561 51.0122 22.1929 51.0122C22.7287 51.0138 23.2589 51.1208 23.7533 51.3273C24.2477 51.5338 24.6966 51.8357 25.0744 52.2157C25.4521 52.5956 25.7513 53.0463 25.9549 53.5419C26.1585 54.0375 26.2625 54.5684 26.2609 55.1042V101.172C26.2617 101.708 26.1569 102.239 25.9526 102.734C25.7483 103.229 25.4484 103.68 25.0701 104.059C24.6918 104.438 24.2425 104.74 23.7478 104.945C23.2531 105.151 22.7227 105.257 22.1869 105.258C21.6511 105.257 21.1207 105.151 20.626 104.945C20.1313 104.74 19.6819 104.438 19.3036 104.059C18.9253 103.68 18.6255 103.229 18.4211 102.734C18.2168 102.239 18.1121 101.708 18.1129 101.172V55.1042Z"
-                        fill="#222222"/>
-                </svg>
-            </div>
-        </div>
-            @endif
+        @endif
     </div>
 </section>
+
 <footer class="footer">
     <table class="container header__container">
         <tr>
 
             <td class="header__logo">
-                <img src="{{url('/storage/assets/LogoFooter.049f563c.png') }}" alt="logo">
+                <img src="{{url('/assets/LogoFooter.049f563c.png') }}" alt="logo">
             </td>
             <td class="header__contacts">
-                <span class="link contacts__link" href="">+7 910 966 54 12</span>
+                <span class="link contacts__link" href="">+971 52 595 32 80</span>
                 <span class="link contacts__link" href="">hello@car-experts.ae</span>
             </td>
 
@@ -1938,15 +2001,14 @@
             </td>
             <td class="footer__qr right">
                 <img
-                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(URL::to('/'.$invoice->id))) !!} ">
+                    src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(140)->generate(URL::to('/'.$invoice->id))) !!} ">
             </td>
         </tr>
 
     </table>
 
 </footer>
-<div class="page-number">стр. 3</div>
-
+<div class="page-number">стр. 5</div>
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
